@@ -1,0 +1,17 @@
+AllCops:
+  TargetRubyVersion: 2.5.0
+  Exclude:
+    - config/**/*
+    - db/**/**
+    - vendor/**/*
+    - bin/**/*
+    - lib/**/*
+    - log/**/*
+    - public/**/*
+    - tmp/**/*
+    - spec/**/*
+    - config.ru
+    - Gemfile
+    - Gemfile.lock
+    - Rakefile
+    - Readme.md

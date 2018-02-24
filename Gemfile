@@ -36,6 +36,7 @@ gem 'redis', '~> 4.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 gem 'slim'
 
 group :development, :test do

@@ -1,0 +1,110 @@
+#myCarousel.carousel.slide data-ride="carousel"
+  ol.carousel-indicators
+    li.active data-target="#myCarousel" data-slide-to="0" 
+    li data-target="#myCarousel" data-slide-to="1"
+    li data-target="#myCarousel" data-slide-to="2"
+  .carousel-inner
+    .carousel-item.active
+      img.first-slide src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide"
+      .container
+        .carousel-caption.text-left
+          h1 笑顔がはじける街づくり 
+          p 幸せはこぶ「さつきが丘」兵庫県姫路市 
+          p 
+            a.btn.btn-lg.btn-primary href="#" role="button" Sign up today
+    .carousel-item
+      img.second-slide src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide"
+      .container
+        .carousel-caption
+          h1 Another example headline.
+          p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+          p
+            a.btn.btn-lg.btn-primary href="#" role="button" Learn more
+    .carousel-item 
+      img.third-slide src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide"
+      .container
+        .carousel-caption.text-right
+          h1 One more for good measure.
+          p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+          p
+            a.btn.btn-lg.btn-primary href="#" role="button" Browse gallery
+  a.carousel-control-prev href="#myCarousel" role="button" data-slide="prev"
+    span.carousel-control-prev-icon aria-hidden="true"
+    span.sr-only Previous
+  a.carousel-control-next href="#myCarousel" role="button" data-slide="next"
+    span.carousel-control-next-icon aria-hidden="true"
+    span.sr-only Next
+
+.container.marketing
+  h1.mb-5 さつきヶ丘
+  .row
+    .col-lg-4
+      = image_tag 'houses.png', size: '140', class: 'rounded-circle'
+      h2 自由な家作り 
+      p 建築条件なし 
+    .col-lg-4
+      = image_tag 'town.png', size: '140', class: 'rounded-circle'
+      h2 美しい街並み 
+      p オール電化・無電柱 
+    .col-lg-4
+      = image_tag 'bodybuilder.png', size: '140', class: 'rounded-circle'
+      h2 地震にも強い 
+      p 硬い岩盤で形成され
+    .col-lg-4
+      = image_tag 'shields.png', size: '140', class: 'rounded-circle'
+      h2 安心・安全 
+      p 静かな高台
+    .col-lg-4
+      = image_tag 'kids.png', size: '140', class: 'rounded-circle'
+      h2 子供たちにやさしい環境 
+      p 公園など
+    .col-lg-4
+      = image_tag 'family-car.png', size: '140', class: 'rounded-circle'
+      h2 便利性のよさ 
+      p 行動しやすい
+
+
+hr.featurette-divider
+
+.row.featurette
+  .col-md-7
+    h2.featurette-heading 
+      |こんなにたくさん！魅力溢れる
+      br
+      strong 「さつきヶ丘」
+      br
+      span.text-muted の人気の理由 
+    p.lead 
+      |さつきヶ丘のホームページへようこそ！
+      br
+      |兵庫県姫路市にて142区画大好評分譲中です！
+      br
+      |さつきヶ丘はオール電化、無電柱、安全な街ですので、子育てにもピッタリ！
+      br
+      |随時、見学実施中なので、お気軽にご連絡ください！
+  .col-md-5
+    img.featurette-image.img-fluid.mx-auto data-src="holder.js/500x500/auto" alt="Generic placeholder image"
+
+hr.featurette-divider
+
+.row.featurette
+  .col-md-7.order-md-2
+    h2.featurette-heading 
+      |Oh yeah, it's that good. 
+      span.text-muted See for yourself.
+    p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+  .col-md-5.order-md-1
+    img.featurette-image.img-fluid.mx-auto data-src="holder.js/500x500/auto" alt="Generic placeholder image"
+
+hr.featurette-divider
+
+.row.featurette
+  .col-md-7
+    h2.featurette-heading 
+      |And lastly, this one. 
+      span.text-muted Checkmate.
+    p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+  .col-md-5
+    img.featurette-image.img-fluid.mx-auto data-src="holder.js/500x500/auto" alt="Generic placeholder image"
+
+hr.featurette-divider

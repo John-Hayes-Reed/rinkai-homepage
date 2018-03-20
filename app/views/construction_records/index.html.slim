@@ -1,0 +1,21 @@
+h1 Listing construction_records
+
+table.table
+  thead
+    tr
+      th Title
+      th Customer
+      th Description
+      th Category
+      th Started on
+      th Finished on
+
+  tbody
+    - @construction_records.each do |construction_record|
+      tr
+        td = construction_record.title
+        td = construction_record.customer
+        td = construction_record.description
+        td = construction_record.category
+        td = construction_record.started_on
+        td = construction_record.finished_on

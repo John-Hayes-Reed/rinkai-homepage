@@ -40,13 +40,14 @@ gem 'bottled_services', '~> 1.0.0.alpha'
 gem 'bottled_decorators', '~> 0.1.5'
 gem 'devise'
 gem 'jquery-rails'
-gem 'slim'
+gem 'slim-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'rubocop', '~> 0.52.1', require: false
   gem 'rspec-rails', '~> 3.7'

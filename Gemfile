@@ -36,6 +36,9 @@ gem 'redis', '~> 4.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0'
+gem 'bottled_services', '~> 1.0.0.alpha'
+gem 'bottled_decorators', '~> 0.1.5'
+gem 'devise'
 gem 'jquery-rails'
 gem 'slim'
 

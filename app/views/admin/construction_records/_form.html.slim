@@ -1,4 +1,4 @@
-= form_for @construction_record do |f|
+= form_for [:admin, @construction_record] do |f|
   - if @construction_record.errors.any?
     #error_explanation
       h2 = "#{pluralize(@construction_record.errors.count, "error")} prohibited this construction_record from being saved:"

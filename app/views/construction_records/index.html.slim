@@ -9,9 +9,6 @@ table.table
       th Category
       th Started on
       th Finished on
-      th
-      th
-      th
 
   tbody
     - @construction_records.each do |construction_record|
@@ -22,10 +19,3 @@ table.table
         td = construction_record.category
         td = construction_record.started_on
         td = construction_record.finished_on
-        td = link_to 'Show', [:admin, construction_record]
-        td = link_to 'Edit', edit_admin_construction_record_path(construction_record)
-        td = link_to 'Destroy', [:admin, construction_record], data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Construction record', new_admin_construction_record_path

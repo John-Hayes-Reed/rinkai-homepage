@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Model for a Vehicle entry owne by Rinkai.
 class Vehicle < ApplicationRecord
   with_options presence: true do |v|
     v.validates :name

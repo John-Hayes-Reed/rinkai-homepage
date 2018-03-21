@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module Admin
-class VehiclesController < ApplicationController
-    before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
+  # Controller for Administration flow of Vehicles.
+  class VehiclesController < ApplicationController
+    before_action :set_vehicle, only: %i[show edit update destroy]
 
     # GET /vehicles
     # GET /vehicles.json
@@ -10,8 +13,7 @@ class VehiclesController < ApplicationController
 
     # GET /vehicles/1
     # GET /vehicles/1.json
-    def show
-    end
+    def show; end
 
     # GET /vehicles/new
     def new
@@ -19,8 +21,7 @@ class VehiclesController < ApplicationController
     end
 
     # GET /vehicles/1/edit
-    def edit
-    end
+    def edit; end
 
     # POST /vehicles
     # POST /vehicles.json
@@ -49,7 +50,8 @@ class VehiclesController < ApplicationController
     # DELETE /vehicles/1.json
     def destroy
       @vehicle.destroy
-      redirect_to admin_vehicles_url, notice: 'Vehicle was successfully destroyed.'
+      redirect_to admin_vehicles_url,
+                  notice: 'Vehicle was successfully destroyed.'
     end
 
     private
@@ -59,7 +61,6 @@ class VehiclesController < ApplicationController
       @vehicle = Vehicle.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
       params.require(:vehicle).permit(:name, :amount)
     end

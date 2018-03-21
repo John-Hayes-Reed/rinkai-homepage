@@ -47,13 +47,16 @@ deploy-staging:
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
+    - heroku run rails db:migrate --exit-code --app $HEROKU_APP_NAME
 
 deploy-production:
   stage: deploy
-  only: 
+  only:
     - master
   type: deploy
   environment: production
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
+    - heroku run rails db:migrate --exit-code --app $HEROKU_APP_NAME
+

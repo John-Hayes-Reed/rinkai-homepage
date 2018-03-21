@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :vehicles
   end
   resources :construction_records, only: :index
+  resources :vehicles, only: :index
 end

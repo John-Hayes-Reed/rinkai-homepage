@@ -1,0 +1,23 @@
+h1 Listing vehicles
+
+table
+  thead
+    tr
+      th Name
+      th Amount
+      th
+      th
+      th
+
+  tbody
+    - @vehicles.each do |vehicle|
+      tr
+        td = vehicle.name
+        td = vehicle.amount
+        td = link_to 'Show', [:admin, vehicle]
+        td = link_to 'Edit', edit_admin_vehicle_path(vehicle)
+        td = link_to 'Destroy', [:admin, vehicle], data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Vehicle', new_admin_vehicle_path

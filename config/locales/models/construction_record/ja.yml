@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      construction_record: 主な施工実績
+    attributes:
+      construction_record:
+        title: title
+        customer: customer
+        description: description
+        category: category
+        started_on: started on
+        finished_on: finished on

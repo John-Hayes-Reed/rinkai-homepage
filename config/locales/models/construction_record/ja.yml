@@ -4,9 +4,9 @@ ja:
       construction_record: 主な施工実績
     attributes:
       construction_record:
-        title: title
-        customer: customer
-        description: description
-        category: category
-        started_on: started on
-        finished_on: finished on
+        title: タイトル
+        customer: 受注先
+        description: 主たる完成工事名
+        category: 部
+        started_on: 着工年月
+        finished_on: 完工年月

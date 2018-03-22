@@ -2,6 +2,9 @@
   "RSpec": {
     "coverage": {
       "/home/john/projects/rinkai-homepage/app/models/administrator.rb": [
+        null,
+        null,
+        null,
         1,
         1,
         null,
@@ -268,6 +271,6 @@
         null
       ]
     },
-    "timestamp": 1521710451
+    "timestamp": 1521728853
   }
 }

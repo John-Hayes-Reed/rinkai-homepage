@@ -22,16 +22,16 @@
     .col-sm-12.col-md-6
       .form-group
         = f.label :description
-        = f.text_area :description, class: 'form-control'
+        = f.text_field :description, class: 'form-control'
   .row
     .col-sm-12.col-md-6
       .form-group
         = f.label :started_on
         .row
-          = f.date_select :started_on, {}, { class: 'form-control form-control-sm col mr-1' }
+          = f.date_select :started_on, { start_year: 1950, discard_day: true }, { class: 'form-control form-control-sm col mr-1' }
     .col-sm-12.col-md-6
       .form-group
         = f.label :finished_on
         .row
-          = f.date_select :finished_on, {}, { class: 'form-control form-control-sm col ml-1' }
+          = f.date_select :finished_on, { start_year: 1950, discard_day: true }, { class: 'form-control form-control-sm col ml-1' }
   .actions = f.submit t('views.forms.save'), class: 'btn btn-outline-primary'

@@ -1,5 +1,4 @@
-h1 New construction_record
+.container.text-left.mt-3.mb-2
+  h1 = t('views.forms.create_new', model: ConstructionRecord.model_name.human)
 
-== render 'form'
-
-= link_to 'Back', admin_construction_records_path
+  == render 'form'

@@ -3,6 +3,7 @@
 module Admin
   # Controller for Administration flow of Vehicles.
   class VehiclesController < ApplicationController
+    before_action :authenticate_administrator!
     before_action :set_vehicle, only: %i[show edit update destroy]
 
     # GET /vehicles

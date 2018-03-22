@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320100604) do
+ActiveRecord::Schema.define(version: 20180321125035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", id: :serial, force: :cascade do |t|
+  create_table "administrators", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -28,16 +28,8 @@ ActiveRecord::Schema.define(version: 20180320100604) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "blogs", id: :serial, force: :cascade do |t|
-    t.string "title"
-    t.string "image"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_administrators_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
   end
 
   create_table "construction_records", force: :cascade do |t|
@@ -49,30 +41,6 @@ ActiveRecord::Schema.define(version: 20180320100604) do
     t.datetime "finished_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "products", id: :serial, force: :cascade do |t|
-    t.string "title"
-    t.string "category"
-    t.string "sex"
-    t.integer "price"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "image"
-    t.string "purchase_url"
-    t.decimal "width", precision: 2
-    t.decimal "height", precision: 2
-    t.decimal "depth", precision: 2
-  end
-
-  create_table "recent_activities", id: :serial, force: :cascade do |t|
-    t.string "title"
-    t.string "parent_type"
-    t.integer "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parent_type", "parent_id"], name: "index_recent_activities_on_parent_type_and_parent_id"
   end
 
   create_table "vehicles", force: :cascade do |t|

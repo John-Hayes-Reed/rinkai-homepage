@@ -24,6 +24,13 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe Admin::VehiclesController, type: :controller do
+  let!(:administrator) do
+    Administrator.create! email: 'test@test.com', password: 'testtest'
+  end
+  before do
+    sign_in administrator
+  end
+
 
   # This should return the minimal set of attributes required to create a valid
   # Vehicle. As you add validations to Vehicle, be sure to

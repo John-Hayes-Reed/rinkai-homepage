@@ -3,6 +3,8 @@
 module Admin
   # Controller for administration flow for Construction Records.
   class ConstructionRecordsController < ApplicationController
+    before_action :authenticate_administrator!
+
     before_action :set_construction_record,
                   only: %i[show edit update destroy]
 

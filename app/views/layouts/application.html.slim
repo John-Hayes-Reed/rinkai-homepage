@@ -7,13 +7,13 @@ head
 body.text-center
   header
     nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-      a.navbar-brand href="#" 臨海建設工業株式会社
+      = link_to '臨海建設工業株式会社', root_path, class: 'navbar-brand'
       button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
       .collapse.navbar-collapse#navbarCollapse
         ul.navbar-nav.mr-auto
           li.nav-item.active
-            a.nav-link href="#" ホーム
+            = link_to 'ホーム', root_path, class: 'nav-link'
           li.nav-item
             = link_to t('views.navigation.construction_records'), construction_records_path, class: 'nav-link'
           li.nav-item

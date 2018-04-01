@@ -89,7 +89,7 @@ RSpec.describe Admin::VehiclesController, type: :controller do
 
       it "redirects to the created vehicle" do
         post :create, params: {vehicle: valid_attributes}, session: valid_session
-        expect(response).to redirect_to([:admin, Vehicle.last])
+        expect(response).to redirect_to(:admin_vehicles)
       end
     end
 
@@ -104,20 +104,20 @@ RSpec.describe Admin::VehiclesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { name: 'new name' }
       }
 
       it "updates the requested vehicle" do
         vehicle = Vehicle.create! valid_attributes
         put :update, params: {id: vehicle.to_param, vehicle: new_attributes}, session: valid_session
         vehicle.reload
-        skip("Add assertions for updated state")
+        expect(vehicle.name).to eq 'new name'
       end
 
       it "redirects to the vehicle" do
         vehicle = Vehicle.create! valid_attributes
         put :update, params: {id: vehicle.to_param, vehicle: valid_attributes}, session: valid_session
-        expect(response).to redirect_to([:admin, vehicle])
+        expect(response).to redirect_to(:admin_vehicles)
       end
     end
 

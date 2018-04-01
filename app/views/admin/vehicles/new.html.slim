@@ -1,5 +1,4 @@
-h1 New vehicle
+.container.text-left.mt-3.mb-2
+  h1 = t('views.forms.create_new', model: Vehicle.model_name.human)
 
-== render 'form'
-
-= link_to 'Back', admin_vehicles_path
+  == render 'form'

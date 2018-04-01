@@ -1,0 +1,9 @@
+ja:
+  views:
+    forms:
+      new: 新規追加
+      edit: 編集
+      destroy: 削除
+      save: 保存する
+      create_new: "「%{model}」を新規追加"
+      update: "「%{model}」を更新"

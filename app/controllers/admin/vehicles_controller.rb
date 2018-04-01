@@ -29,7 +29,7 @@ module Admin
     def create
       @vehicle = Vehicle.new(vehicle_params)
       if @vehicle.save
-        redirect_to [:admin, @vehicle],
+        redirect_to :admin_vehicles,
                     notice: 'Vehicle was successfully created.'
       else
         render :new
@@ -40,7 +40,7 @@ module Admin
     # PATCH/PUT /vehicles/1.json
     def update
       if @vehicle.update(vehicle_params)
-        redirect_to [:admin, @vehicle],
+        redirect_to :admin_vehicles,
                     notice: 'Vehicle was successfully updated.'
       else
         render :edit

@@ -1,9 +1,9 @@
 ja:
   date:
     order:
-      - :day
-      - :month
       - :year
+      - :month
+      - :day
     month_names:
       - :1月
       - :2月

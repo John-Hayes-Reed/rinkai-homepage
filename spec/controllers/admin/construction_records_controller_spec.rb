@@ -88,7 +88,7 @@ RSpec.describe Admin::ConstructionRecordsController, type: :controller do
 
       it "redirects to the created construction_record" do
         post :create, params: {construction_record: valid_attributes}, session: valid_session
-        expect(response).to redirect_to([:admin, ConstructionRecord.last])
+        expect(response).to redirect_to(:admin_construction_records)
       end
     end
 
@@ -116,7 +116,7 @@ RSpec.describe Admin::ConstructionRecordsController, type: :controller do
       it "redirects to the construction_record" do
         construction_record = ConstructionRecord.create! valid_attributes
         put :update, params: {id: construction_record.to_param, construction_record: valid_attributes}, session: valid_session
-        expect(response).to redirect_to([:admin, construction_record])
+        expect(response).to redirect_to(:admin_construction_records)
       end
     end
 

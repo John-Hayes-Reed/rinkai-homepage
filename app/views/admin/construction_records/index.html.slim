@@ -1,31 +1,28 @@
-h1 Listing construction_records
-
-table.table
-  thead
-    tr
-      th Title
-      th Customer
-      th Description
-      th Category
-      th Started on
-      th Finished on
-      th
-      th
-      th
-
-  tbody
-    - @construction_records.each do |construction_record|
+.container.text-left.mt-3.mb-2
+  h1
+    = ConstructionRecord.model_name.human
+    |の一覧
+  = link_to t('views.forms.new'), new_admin_construction_record_path, class: 'btn btn-outline-primary mb-2'
+  table.table
+    thead
       tr
-        td = construction_record.title
-        td = construction_record.customer
-        td = construction_record.description
-        td = construction_record.category
-        td = construction_record.started_on
-        td = construction_record.finished_on
-        td = link_to 'Show', [:admin, construction_record]
-        td = link_to 'Edit', edit_admin_construction_record_path(construction_record)
-        td = link_to 'Destroy', [:admin, construction_record], data: { confirm: 'Are you sure?' }, method: :delete
+        th = ConstructionRecord.human_attribute_name :title
+        th = ConstructionRecord.human_attribute_name :customer
+        th = ConstructionRecord.human_attribute_name :description
+        th = ConstructionRecord.human_attribute_name :category
+        th = ConstructionRecord.human_attribute_name :started_on
+        th = ConstructionRecord.human_attribute_name :finished_on
+        th
+        th
 
-br
-
-= link_to 'New Construction record', new_admin_construction_record_path
+    tbody
+      - @construction_records.each do |construction_record|
+        tr
+          td = construction_record.title
+          td = construction_record.customer
+          td = construction_record.description
+          td = construction_record.category
+          td = construction_record.started_on
+          td = construction_record.finished_on
+          td = link_to t('views.forms.edit'), edit_admin_construction_record_path(construction_record), class: 'btn btn-outline-primary btn-sm'
+          td = link_to t('views.forms.destroy'), [:admin, construction_record], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'

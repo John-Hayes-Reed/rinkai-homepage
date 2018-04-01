@@ -32,7 +32,7 @@ module Admin
       @construction_record = ConstructionRecord.new(construction_record_params)
 
       if @construction_record.save
-        redirect_to [:admin, @construction_record],
+        redirect_to :admin_construction_records,
                     notice: 'Construction record was successfully created.'
       else
         render :new
@@ -43,7 +43,7 @@ module Admin
     # PATCH/PUT /construction_records/1.json
     def update
       if @construction_record.update(construction_record_params)
-        redirect_to [:admin, @construction_record],
+        redirect_to :admin_construction_records,
                     notice: 'Construction record was successfully updated.'
       else
         render :edit

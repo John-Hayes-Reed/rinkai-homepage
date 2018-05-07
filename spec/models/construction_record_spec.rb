@@ -18,7 +18,7 @@ RSpec.describe ConstructionRecord, type: :model do
 
   context 'with nil description' do
     subject { build :construction_record, :nil_description }
-    it { is_expected.not_to be_valid }
+    it { is_expected.to be_valid }
   end
 
   context 'with nil category' do

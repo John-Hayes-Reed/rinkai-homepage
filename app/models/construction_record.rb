@@ -3,7 +3,7 @@
 # Model to represent a construction record that has in
 # the past been completed by Rinkai.
 class ConstructionRecord < ApplicationRecord
-  enum category: %i[civil architecture]
+  enum category: %i[civil architecture joint]
 
   with_options presence: true do |v|
     v.validates :title

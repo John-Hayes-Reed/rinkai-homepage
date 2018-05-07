@@ -9,19 +9,31 @@ require 'csv'
 
 Administrator.create email: 'root@root.com', password: 'rootroot'
 
-category = :civil
 Dir.foreach(Rails.root.join(*%w[db seed_data])) do |file|
-  next unless file.match? /heisei[0-9]+.csv/
+  next unless file.match? /heisei[0-9]+.csv|vehicles.csv/
 
-  CSV.foreach(Rails.root.join('db', 'seed_data', file)) do |row|
-    category = :architecture if row[0].blank?
-    next if row[0].blank?
+  case file
+  when /vehicles.csv/
+    CSV.foreach(Rails.root.join('db', 'seed_data', file)) do |row|
+      name, serial, make, amount = row
+      Vehicle.create! name: name,
+                      serial: serial,
+                      make: make,
+                      amount: amount.to_i
+    end
+  when /heisei[0-9]+.csv/
+    category = :civil
+    CSV.foreach(Rails.root.join('db', 'seed_data', file)) do |row|
+      category = :architecture if row[0].blank?
+      category = :joint if row[0] == 'joint'
+      next if row[0].blank? || row[0] == 'joint'
 
-    customer, title, started_on, finished_on = row
-    ConstructionRecord.create! customer: customer,
-                               title: title,
-                               started_on: JapaneseDate.from_japanese(started_on).western_date,
-                               finished_on: JapaneseDate.from_japanese(finished_on).western_date,
-                               category: category
+      customer, title, started_on, finished_on = row
+      ConstructionRecord.create! customer: customer,
+                                 title: title,
+                                 started_on: JapaneseDate.from_japanese(started_on).western_date,
+                                 finished_on: JapaneseDate.from_japanese(finished_on).western_date,
+                                 category: category
+    end
   end
 end

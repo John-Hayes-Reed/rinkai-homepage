@@ -14,4 +14,13 @@
       .form-group
         = f.label :amount
         = f.number_field :amount, class: 'form-control'
+  .row
+    .col-sm-12.col-md-6
+      .form-group
+        = f.label :make
+        = f.text_field :make, class: 'form-control'
+    .col-sm-12.col-md-6
+      .form-group
+        = f.label :serial
+        = f.text_field :serial, class: 'form-control'
   .actions = f.submit t('views.forms.save'), class: 'btn btn-outline-primary'

@@ -63,7 +63,7 @@ module Admin
     end
 
     def vehicle_params
-      params.require(:vehicle).permit(:name, :amount)
+      params.require(:vehicle).permit(:name, :amount, :make, :serial)
     end
   end
 end

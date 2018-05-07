@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @construction_record.title
+p
+  strong Customer:
+  = @construction_record.customer
+p
+  strong Description:
+  = @construction_record.description
+p
+  strong Category:
+  = @construction_record.category
+p
+  strong Started on:
+  = @construction_record.started_on
+p
+  strong Finished on:
+  = @construction_record.finished_on
+
+=> link_to 'Edit', edit_admin_construction_record_path(@construction_record)
+'|
+=< link_to 'Back', admin_construction_records_path

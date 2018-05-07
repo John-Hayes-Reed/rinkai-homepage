@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.5.0
   Exclude:
+    - app/views/**/*
     - config/**/*
     - db/**/**
     - vendor/**/*

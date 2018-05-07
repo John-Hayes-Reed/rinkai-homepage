@@ -1,0 +1,20 @@
+.container.text-left.mt-3.mb-2
+  h1
+    = Vehicle.model_name.human
+    |の一覧
+  = link_to t('views.forms.new'), new_admin_vehicle_path, class: 'btn btn-outline-primary mb-2'
+  table.table
+    thead
+      tr
+        th = Vehicle.human_attribute_name :name
+        th = Vehicle.human_attribute_name :amount
+        th
+        th
+
+    tbody
+      - @vehicles.each do |vehicle|
+        tr
+          td = vehicle.name
+          td = vehicle.amount
+          td = link_to t('views.forms.edit'), edit_admin_vehicle_path(vehicle), class: 'btn btn-outline-primary btn-sm'
+          td = link_to t('views.forms.destroy'), [:admin, vehicle], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'

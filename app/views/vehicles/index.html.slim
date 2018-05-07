@@ -1,0 +1,13 @@
+h1 Listing Vehicles
+
+table.table
+  thead
+    tr
+      th Name
+      th Amount
+
+  tbody
+    - @vehicles.each do |vehicle|
+      tr
+        td = vehicle.name
+        td = vehicle.amount

@@ -1,3 +1,4 @@
+require 'csv'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,3 +6,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Administrator.create email: 'root@root.com', password: 'rootroot'
+
+Dir.foreach(Rails.root.join(*%w[db seed_data])) do |file|
+  next unless file.match? /heisei[0-9]+.csv|vehicles.csv/
+
+  case file
+  when /vehicles.csv/
+    CSV.foreach(Rails.root.join('db', 'seed_data', file)) do |row|
+      name, serial, make, amount = row
+      Vehicle.create! name: name,
+                      serial: serial,
+                      make: make,
+                      amount: amount.to_i
+    end
+  when /heisei[0-9]+.csv/
+    category = :civil
+    CSV.foreach(Rails.root.join('db', 'seed_data', file)) do |row|
+      category = :architecture if row[0].blank?
+      category = :joint if row[0] == 'joint'
+      next if row[0].blank? || row[0] == 'joint'
+
+      customer, title, started_on, finished_on = row
+      ConstructionRecord.create! customer: customer,
+                                 title: title,
+                                 started_on: JapaneseDate.from_japanese(started_on).western_date,
+                                 finished_on: JapaneseDate.from_japanese(finished_on).western_date,
+                                 category: category
+    end
+  end
+end

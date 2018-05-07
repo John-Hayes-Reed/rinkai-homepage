@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# A Value Object that holds date values for the Japanese calendar.
 class JapaneseDate
   include Comparable
   CALENDAR_FORMATS = %i[japanese western].freeze

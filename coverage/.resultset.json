@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/john/projects/rinkai-homepage/app/models/administrator.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/models/administrator.rb": [
         null,
         null,
         null,
@@ -10,7 +10,7 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/models/application_record.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/models/application_record.rb": [
         null,
         null,
         null,
@@ -18,7 +18,7 @@
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/helpers/admin/construction_records_helper.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/helpers/admin/construction_records_helper.rb": [
         null,
         null,
         1,
@@ -27,35 +27,35 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/helpers/application_helper.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/helpers/application_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/helpers/construction_records_helper.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/helpers/construction_records_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/helpers/home_helper.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/helpers/home_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/helpers/vehicles_helper.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/helpers/vehicles_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/controllers/admin/construction_records_controller.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/controllers/admin/construction_records_controller.rb": [
         null,
         null,
         1,
@@ -136,7 +136,7 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/controllers/application_controller.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/controllers/application_controller.rb": [
         null,
         null,
         null,
@@ -144,7 +144,7 @@
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/controllers/admin/vehicles_controller.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/controllers/admin/vehicles_controller.rb": [
         null,
         null,
         1,
@@ -215,7 +215,7 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/controllers/construction_records_controller.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/controllers/construction_records_controller.rb": [
         null,
         null,
         null,
@@ -225,7 +225,7 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/controllers/home_controller.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/controllers/home_controller.rb": [
         null,
         null,
         null,
@@ -233,7 +233,7 @@
         1,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/controllers/vehicles_controller.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/controllers/vehicles_controller.rb": [
         null,
         null,
         null,
@@ -243,13 +243,14 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/models/construction_record.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/models/construction_record.rb": [
         null,
         null,
         null,
         null,
         1,
         1,
+        null,
         1,
         1,
         1,
@@ -259,7 +260,7 @@
         null,
         null
       ],
-      "/home/john/projects/rinkai-homepage/app/models/vehicle.rb": [
+      "/home/john/Gitlab/rinkai-homepage/app/models/vehicle.rb": [
         null,
         null,
         null,
@@ -267,10 +268,67 @@
         1,
         1,
         1,
+        null,
+        null
+      ],
+      "/home/john/Gitlab/rinkai-homepage/app/values/japanese_date.rb": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        8,
+        8,
+        0,
+        null,
+        8,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        4,
         null,
         null
       ]
     },
-    "timestamp": 1522554511
+    "timestamp": 1525689984
   }
 }

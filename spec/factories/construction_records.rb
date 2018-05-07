@@ -3,7 +3,7 @@ FactoryBot.define do
     title 'TEST_TITLE'
     customer 'TEST_CUSTOMER'
     description 'TEST_DESCRIPTION'
-    category 'TEST_CATEGORY'
+    category :civil
     started_on Date.today - 3.days
     finished_on Date.today - 1.day
 

@@ -20,4 +20,14 @@ RSpec.describe Vehicle, type: :model do
     subject { build :vehicle, :low_amount }
     it { is_expected.not_to be_valid }
   end
+
+  context 'with nil make' do
+    subject { build :vehicle, :nil_make }
+    it { is_expected.not_to be_valid }
+  end
+
+  context 'with nil serial' do
+    subject { build :vehicle, :nil_serial }
+    it { is_expected.not_to be_valid }
+  end
 end

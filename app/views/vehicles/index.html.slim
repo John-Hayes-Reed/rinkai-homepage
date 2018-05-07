@@ -4,10 +4,14 @@ table.table
   thead
     tr
       th Name
+      th Make
+      th Serial
       th Amount
 
   tbody
     - @vehicles.each do |vehicle|
       tr
         td = vehicle.name
+        td = vehicle.make
+        td = vehicle.serial
         td = vehicle.amount

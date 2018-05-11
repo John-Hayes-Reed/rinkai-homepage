@@ -32,6 +32,14 @@ class JapaneseDate
     { date: date, format: calendar_format, western_date: western_date }
   end
 
+  def year
+    date.tr('H', '').split('.').first
+  end
+
+  def month
+    date.tr('H', '').split('.').second
+  end
+
   private
 
   def init_dates_from_western(date)

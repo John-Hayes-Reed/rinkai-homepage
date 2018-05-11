@@ -2,7 +2,6 @@
 
 # Helper / View object class for public flow of construction records.
 module ConstructionRecordsHelper
-
   def construction_index_path(year)
     date = Date.new(year, 7, 1)
     japanese_date = JapaneseDate.from_western(date)

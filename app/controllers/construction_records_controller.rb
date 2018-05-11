@@ -4,6 +4,6 @@
 class ConstructionRecordsController < ApplicationController
   def index
     @construction_records = ConstructionRecord
-                              .finished_in_year_group_for(params[:year])
+                            .finished_in_year_group_for(params[:year])
   end
 end

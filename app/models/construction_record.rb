@@ -12,4 +12,11 @@ class ConstructionRecord < ApplicationRecord
     v.validates :started_on
     v.validates :finished_on
   end
+
+  def self.finished_in_year_group_for(year)
+    date = Date.new(year.to_i, 7, 1)
+    where(finished_on: date..date + 1.year)
+      .order(finished_on: :desc)
+      .group_by(&:category)
+  end
 end

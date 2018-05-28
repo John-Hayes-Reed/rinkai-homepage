@@ -9,8 +9,19 @@ body {
 }
 
 .carousel-caption {
-  bottom: 3rem;
   z-index: 10;
+  &.lower-caption {
+    bottom: 3rem;
+  }
+  &.floor-caption {
+    bottom: 0rem;
+  }
+  &.upper-caption {
+    top: 3rem;
+  }
+  &.mid-caption {
+    top: 12rem;
+  }
 }
 
 .carousel-item {

@@ -2,6 +2,7 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
+  //background-color: #c3d9ff;
 }
 
 .carousel {
@@ -9,20 +10,19 @@ body {
 }
 
 .carousel-caption {
-  bottom: 3rem;
   z-index: 10;
-}
-
-.carousel-item {
-  height: 32rem;
-  background-color: #777;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
+  &.lower-caption {
+    bottom: 3rem;
+  }
+  &.floor-caption {
+    bottom: 0rem;
+  }
+  &.upper-caption {
+    top: 3rem;
+  }
+  &.mid-caption {
+    top: 12rem;
+  }
 }
 
 .marketing .col-lg-4 {
@@ -45,6 +45,8 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -.05rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .home-vid {
@@ -68,4 +70,10 @@ body {
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+.banner-logo {
+  margin-top: -3.5rem;
+  margin-bottom: 3rem;
+  width: 60%;
 }

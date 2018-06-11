@@ -1,13 +1,17 @@
-h1 Listing Vehicles
-
-table.table
-  thead
-    tr
-      th Name
-      th Amount
-
-  tbody
-    - @vehicles.each do |vehicle|
-      tr
-        td = vehicle.name
-        td = vehicle.amount
+.row.mt-4.ml-1.mr-1
+  .col-md-12
+    h3.d-flex = t 'views.navigation.vehicles'
+    table.table.table-sm.table-striped
+      thead
+        tr
+          th 名称
+          th 製造者名
+          th 形式
+          th 数量
+      tbody
+        - @vehicles.each do |vehicle|
+          tr
+            td = vehicle.name
+            td = vehicle.make
+            td = vehicle.serial
+            td = vehicle.amount

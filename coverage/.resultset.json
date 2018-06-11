@@ -39,6 +39,21 @@
         null,
         null,
         1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/home/john/Gitlab/rinkai-homepage/app/helpers/home_helper.rb": [
@@ -223,6 +238,7 @@
         1,
         1,
         null,
+        null,
         null
       ],
       "/home/john/Gitlab/rinkai-homepage/app/controllers/home_controller.rb": [
@@ -258,12 +274,21 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
         null
       ],
       "/home/john/Gitlab/rinkai-homepage/app/models/vehicle.rb": [
         null,
         null,
         null,
+        1,
+        1,
         1,
         1,
         1,
@@ -307,6 +332,14 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
         null,
         1,
         4,
@@ -329,6 +362,6 @@
         null
       ]
     },
-    "timestamp": 1525689984
+    "timestamp": 1527509512
   }
 }

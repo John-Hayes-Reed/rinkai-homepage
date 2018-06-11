@@ -1,10 +1,14 @@
 .row.mt-4.ml-1.mr-1
-  .col-md-1
+  .col-md-2.d-none.d-md-block
     div.d-flex.flex-column.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'
       - 2016.downto(1995) do |year|
         small
           = construction_index_path year
-  .col-md-11
+  - 2016.downto(1995) do |year|
+    div.d-md-none.col-2.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'
+      small
+        = construction_index_path year
+  .col-md-10.col-sm-12
     - ConstructionRecord.categories.keys.each do |key|
       - if @construction_records[key].present?
         h3.d-flex = construction_category_title key

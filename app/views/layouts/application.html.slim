@@ -6,28 +6,29 @@ head
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 body.text-center
   header
-    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-primary
-      = link_to '臨海建設工業株式会社', root_path, class: 'navbar-brand'
-      button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
-        span.navbar-toggler-icon
-      .collapse.navbar-collapse#navbarCollapse
-        ul.navbar-nav.mr-auto
-          li.nav-item class="#{'active' if params[:controller] == 'home'}"
-            = link_to 'ホーム', root_path, class: 'nav-link'
-          li.nav-item class="#{'active' if params[:controller] == 'construction_records'}"
-            = link_to t('views.navigation.construction_records'), construction_records_path(year: 2016), class: 'nav-link'
-          li.nav-item class="#{'active' if params[:controller] == 'vehicles'}"
-            = link_to t('views.navigation.vehicles'), vehicles_path, class: 'nav-link'
+    nav.navbar.navbar-expand-md.navbar-light.fixed-top style="background-color: #e3f2fd;"
+      .container
+        = link_to '臨海建設工業株式会社', root_path, class: 'navbar-brand'
+        button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarCollapse
+          ul.navbar-nav.mr-auto
+            li.nav-item class="#{'active' if params[:controller] == 'home'}"
+              = link_to 'ホーム', root_path, class: 'nav-link'
+            li.nav-item class="#{'active' if params[:controller] == 'construction_records'}"
+              = link_to t('views.navigation.construction_records'), construction_records_path(year: 2016), class: 'nav-link'
+            li.nav-item class="#{'active' if params[:controller] == 'vehicles'}"
+              = link_to t('views.navigation.vehicles'), vehicles_path, class: 'nav-link'
 
-        - if administrator_signed_in?
-          ul.navbar-nav
+          - if administrator_signed_in?
+            ul.navbar-nav
+              li.nav-item
+                = link_to t('views.navigation.construction_records_admin'), admin_construction_records_path, class: 'nav-link'
+              li.nav_item
+                = link_to t('views.navigation.vehicles_admin'), admin_vehicles_path, class: 'nav-link'
+            = link_to 'Log out', destroy_administrator_session_path, method: :delete, class: 'btn btn-outline-danger'
+          ul.navbar-nav.ml-auto
             li.nav-item
-              = link_to t('views.navigation.construction_records_admin'), admin_construction_records_path, class: 'nav-link'
-            li.nav_item
-              = link_to t('views.navigation.vehicles_admin'), admin_vehicles_path, class: 'nav-link'
-          = link_to 'Log out', destroy_administrator_session_path, method: :delete, class: 'btn btn-outline-danger'
-        ul.navbar-nav.ml-auto
-          li.nav-item
-            = link_to 'さつきが丘のホームページへ', 'http://www.rinkai-kk.com/index.html', class: 'nav-link'
+              = link_to 'さつきが丘のホームページへ', 'http://www.rinkai-kk.com/index.html', class: 'nav-link'
     main role='main'
       = yield

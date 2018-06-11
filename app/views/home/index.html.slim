@@ -1,78 +1,176 @@
-#myCarousel.carousel.slide data-ride="carousel"
-  ol.carousel-indicators
-    li.active data-target="#myCarousel" data-slide-to="0"
-    li data-target="#myCarousel" data-slide-to="1"
-    li data-target="#myCarousel" data-slide-to="2"
-    li data-target="#myCarousel" data-slide-to="3"
-  .carousel-inner
-    .carousel-item.active
-      = image_tag 'rinkai_image_1.JPG', class: 'first-slide'
-      .container
-        .carousel-caption.text-left.upper-caption
-          h1 写真のタイトル
-          p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
-    .carousel-item
-      = image_tag 'rinkai_image_2.JPG', class: 'second-slide'
-      .container
-        .carousel-caption.text-left.mid-caption
-          h1 写真のタイトル
-          p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
-    .carousel-item
-      = image_tag 'rinkai_image_3.JPG', class: 'third-slide'
-      .container
-        .carousel-caption.text-center.upper-caption
-          h1 写真のタイトル
-          p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
-    .carousel-item
-      = image_tag 'rinkai_image_4.JPG', class: 'third-slide'
-  a.carousel-control-prev href="#myCarousel" role="button" data-slide="prev"
-    span.carousel-control-prev-icon aria-hidden="true"
-    span.sr-only Previous
-  a.carousel-control-next href="#myCarousel" role="button" data-slide="next"
-    span.carousel-control-next-icon aria-hidden="true"
-    span.sr-only Next
+.container.mt-4
+  #myCarousel.carousel.slide data-ride="carousel"
+    ol.carousel-indicators
+      li.active data-target="#myCarousel" data-slide-to="0"
+      li data-target="#myCarousel" data-slide-to="1"
+      li data-target="#myCarousel" data-slide-to="2"
+      li data-target="#myCarousel" data-slide-to="3"
+    .carousel-inner
+      .carousel-item.active
+        = image_tag 'rinkai_image_1.JPG', class: 'first-slide d-block w-100'
+        .container
+          .carousel-caption.text-left.upper-caption
+            h1 写真のタイトル
+            p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
+      .carousel-item
+        = image_tag 'rinkai_image_2.JPG', class: 'second-slide d-block w-100'
+        .container
+          .carousel-caption.text-left.mid-caption
+            h1 写真のタイトル
+            p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
+      .carousel-item
+        = image_tag 'rinkai_image_3.JPG', class: 'third-slide d-block w-100'
+        .container
+          .carousel-caption.text-center.upper-caption
+            h1 写真のタイトル
+            p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
+      .carousel-item
+        = image_tag 'rinkai_image_4.JPG', class: 'third-slide d-block w-100'
 
-hr.featurette-divider
+    a.carousel-control-prev href="#myCarousel" role="button" data-slide="prev"
+      span.carousel-control-prev-icon aria-hidden="true"
+      span.sr-only Previous
+    a.carousel-control-next href="#myCarousel" role="button" data-slide="next"
+      span.carousel-control-next-icon aria-hidden="true"
+      span.sr-only Next
 
-.row.featurette
-  .col-md-5.col-sm-12
-    h2.featurette-heading
-      |こんなにたくさん！魅力溢れる
-      br
-      strong 「さつきヶ丘」
-      br
-      span.text-muted の人気の理由
-    p.lead
-      |さつきヶ丘のホームページへようこそ！
-      br
-      |兵庫県姫路市にて142区画大好評分譲中です！
-      br
-      |さつきヶ丘はオール電化、無電柱、安全な街ですので、子育てにもピッタリ！
-      br
-      |随時、見学実施中なので、お気軽にご連絡ください！
-  .col-md-7.col-sm-12
-    = video_tag('rinkai_01', autobuffer: true, controls: true, class: 'home-vid')
+.container
 
-hr.featurette-divider
+  = image_tag 'logo_with_text.png', class: 'banner-logo'
 
-.row.featurette
-  .col-md-5.col-sm-12.order-md-2
-    h2.featurette-heading
-      |Oh yeah, it's that good.
-      span.text-muted See for yourself.
-    p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-  .col-md-7.col-sm-12.order-md-1
-    = video_tag('rinkai_02', autobuffer: true, controls: true, class: 'home-vid')
+  .row.featurette
+    .col-md-4.col-sm-12
+      h1.featurette-heading
+        |運営会社情報
+      p.lead.text-muted
+        |快適な暮らしの創造へ
+        / .text-muted
+        /   small ～胸躍る感動をお届けするのも私たちの仕事です～
+    .col-md-8.col-sm-12.text-left.d-none.d-md-block
+      p
+        |時代の潮流がますます厳しくなっている社会。
+        br
+        |その変貌に伴って生活ニーズの多様化、個性化は著しいものです。
+      p
+        |快適生活を支える土木、建築、開発事業。
+        br
+        |とりわけ人々の生活に密着した各部門では、多岐にわたる社会のニーズをくみあげ、それらを事業性に取り入れて、トータルシステムで多様化する社会のニーズにこたえられる様、幅広く活躍しています。
+      p
+        |また単に新しさだけに着眼するのではなく本当に優れているものを社会に創り出していきます。
+      p
+        |未来に向かってより積極的な事業展開を考え、快適で安全な社会を目指す会社として、最前線で活躍し、社会の発展の為大きく貢献してゆきたく思います。
+    .col-md-8.col-sm-12.text-center.d-md-none
+      p
+        |時代の潮流がますます厳しくなっている社会。
+        br
+        |その変貌に伴って生活ニーズの多様化、個性化は著しいものです。
+      p
+        |快適生活を支える土木、建築、開発事業。
+        br
+        |とりわけ人々の生活に密着した各部門では、多岐にわたる社会のニーズをくみあげ、それらを事業性に取り入れて、トータルシステムで多様化する社会のニーズにこたえられる様、幅広く活躍しています。
+      p
+        |また単に新しさだけに着眼するのではなく本当に優れているものを社会に創り出していきます。
+      p
+        |未来に向かってより積極的な事業展開を考え、快適で安全な社会を目指す会社として、最前線で活躍し、社会の発展の為大きく貢献してゆきたく思います。
 
-hr.featurette-divider
+  hr.featurette-divider
 
-.row.featurette
-  .col-md-5.col-sm-12
-    h2.featurette-heading
-      |And lastly, this one.
-      span.text-muted Checkmate.
-    p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-  .col-md-7.col-sm-12
-    = video_tag('rinkai_03', autobuffer: true, controls: true, class: 'home-vid')
+  .row.featurette
+    .col-md-4.col-sm-12.order-md-2
+      h2.featurette-heading
+        |会社概要
+    .col-md-8.col-sm-12.order-md-1.text-left.d-none.d-md-block
+      p
+        strong 所在地
+        |&nbsp;&nbsp;〒670-0966　兵庫県姫路市延末86-5（姫路市文化センター　東隣り）
+      p
+        strong 連絡先
+        |&nbsp;&nbsp;TEL：079-294-3326
+        |&nbsp;&nbsp;&nbsp;&nbsp;FAX：079-292-6396
+      p
+        strong 創業
+        |&nbsp;&nbsp;昭和37年10月15日
+      p
+        strong 資本金
+        |&nbsp;&nbsp;3,000万円
+      p
+        strong 代表者
+        |&nbsp;&nbsp;岩田　大輔
+      p
+        strong 事業内容
+        |&nbsp;&nbsp;土木工事業・建築工事業・宅地建物取引業 他
+      h4 事業内容
+      p 土木工事業・建築工事業・宅地建物取引業 他
+      h4 各種資格
+      ul
+        li
+          |建設許可番号（土木・建築・舗装・大工・石・タイル・レンガ・ブロック・鉄筋・しゅんせつ・内装仕上・鳶・屋根・ 鋼構造物・塗装・水道施設）
+          br
+          |兵庫県知事（特－27）第460085号　平成27年6月30日
+        li 一級建築士事務所登録番号　　　（一級）第450908号
+        li 宅地建物取引業者　　　兵庫県知事（5）第450869号
+    .col-md-8.col-sm-12.order-md-1.text-center.d-md-none.mt-3
+      p
+        strong 所在地
+        br
+        |&nbsp;&nbsp;〒670-0966　兵庫県姫路市延末86-5（姫路市文化センター　東隣り）
+      p
+        strong 連絡先
+        br
+        |&nbsp;&nbsp;TEL：079-294-3326
+        |&nbsp;&nbsp;&nbsp;&nbsp;FAX：079-292-6396
+      p
+        strong 創業
+        br
+        |&nbsp;&nbsp;昭和37年10月15日
+      p
+        strong 資本金
+        br
+        |&nbsp;&nbsp;3,000万円
+      p
+        strong 代表者
+        br
+        |&nbsp;&nbsp;岩田　大輔
+      p
+        strong 事業内容
+        br
+        |&nbsp;&nbsp;土木工事業・建築工事業・宅地建物取引業 他
+      h5 事業内容
+      p 土木工事業・建築工事業・宅地建物取引業 他
+      h5 各種資格
+      p
+        |建設許可番号
+        br
+        |土木・建築・舗装・大工・石・タイル・レンガ・ブロック・鉄筋・しゅんせつ・内装仕上・鳶・屋根・ 鋼構造物・塗装・水道施設
+      p 兵庫県知事（特－27）第460085号　平成27年6月30日
+      p 一級建築士事務所登録番号　　　（一級）第450908号
+      p 宅地建物取引業者　　　兵庫県知事（5）第450869号
 
-hr.featurette-divider
+  hr.featurette-divider
+
+  .row.featurette
+    .col-md-4.col-sm-12
+      h2.featurette-heading
+        |タイトル
+    .col-md-8.col-sm-12
+      = video_tag('rinkai_01', autobuffer: true, controls: true, class: 'home-vid')
+
+  hr.featurette-divider
+
+  .row.featurette
+    .col-md-4.col-sm-12.order-md-2
+      h2.featurette-heading
+        |タイトル
+    .col-md-8.col-sm-12.order-md-1
+      = video_tag('rinkai_02', autobuffer: true, controls: true, class: 'home-vid')
+
+  hr.featurette-divider
+
+  .row.featurette
+    .col-md-4.col-sm-12
+      h2.featurette-heading
+        |タイトル
+    .col-md-8.col-sm-12
+      = video_tag('rinkai_03', autobuffer: true, controls: true, class: 'home-vid')
+
+  hr.featurette-divider

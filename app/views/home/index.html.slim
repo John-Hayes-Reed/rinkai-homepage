@@ -39,14 +39,14 @@
   = image_tag 'logo_with_text.png', class: 'banner-logo'
 
   .row.featurette
-    .col-md-4.col-sm-12
+    .col-lg-4.col-12
       h1.featurette-heading
         |運営会社情報
       p.lead.text-muted
         |快適な暮らしの創造へ
         / .text-muted
         /   small ～胸躍る感動をお届けするのも私たちの仕事です～
-    .col-md-8.col-sm-12.text-left.d-none.d-md-block
+    .col-lg-8.col-12.text-left.d-none.d-lg-block
       p
         |時代の潮流がますます厳しくなっている社会。
         br
@@ -59,7 +59,7 @@
         |また単に新しさだけに着眼するのではなく本当に優れているものを社会に創り出していきます。
       p
         |未来に向かってより積極的な事業展開を考え、快適で安全な社会を目指す会社として、最前線で活躍し、社会の発展の為大きく貢献してゆきたく思います。
-    .col-md-8.col-sm-12.text-center.d-md-none
+    .col-lg-8.col-12.text-center.d-lg-none
       p
         |時代の潮流がますます厳しくなっている社会。
         br
@@ -76,10 +76,10 @@
   hr.featurette-divider
 
   .row.featurette
-    .col-md-4.col-sm-12.order-md-2
+    .col-lg-4.col-12.order-lg-2
       h2.featurette-heading
         |会社概要
-    .col-md-8.col-sm-12.order-md-1.text-left.d-none.d-md-block
+    .col-lg-8.col-12.order-lg-1.text-left.d-none.d-lg-block
       p
         strong 所在地
         |&nbsp;&nbsp;〒670-0966　兵庫県姫路市延末86-5（姫路市文化センター　東隣り）
@@ -109,7 +109,7 @@
           |兵庫県知事（特－27）第460085号　平成27年6月30日
         li 一級建築士事務所登録番号　　　（一級）第450908号
         li 宅地建物取引業者　　　兵庫県知事（5）第450869号
-    .col-md-8.col-sm-12.order-md-1.text-center.d-md-none.mt-3
+    .col-lg-8.col-12.order-lg-1.text-center.d-lg-none.mt-3
       p
         strong 所在地
         br
@@ -149,28 +149,26 @@
   hr.featurette-divider
 
   .row.featurette
-    .col-md-4.col-sm-12
+    .col-lg-4.col-12
       h2.featurette-heading
         |タイトル
-    .col-md-8.col-sm-12
+    .col-lg-8.col-12
       = video_tag('rinkai_01', autobuffer: true, controls: true, class: 'home-vid')
 
   hr.featurette-divider
 
   .row.featurette
-    .col-md-4.col-sm-12.order-md-2
+    .col-lg-4.col-12.order-lg-2
       h2.featurette-heading
         |タイトル
-    .col-md-8.col-sm-12.order-md-1
+    .col-lg-8.col-12.order-lg-1
       = video_tag('rinkai_02', autobuffer: true, controls: true, class: 'home-vid')
 
   hr.featurette-divider
 
-  .row.featurette
-    .col-md-4.col-sm-12
+  .row.featurette.mb-5
+    .col-lg-4.col-12
       h2.featurette-heading
         |タイトル
-    .col-md-8.col-sm-12
+    .col-lg-8.col-12
       = video_tag('rinkai_03', autobuffer: true, controls: true, class: 'home-vid')
-
-  hr.featurette-divider

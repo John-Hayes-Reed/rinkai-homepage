@@ -1,30 +1,31 @@
-.row.mt-4.ml-1.mr-1
-  .col-lg-2.d-none.d-lg-block
-    div.d-flex.flex-column.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'
-      - 2016.downto(1995) do |year|
+.container.mt-4
+  .row
+    .col-lg-2.d-none.d-lg-block
+      div.d-flex.flex-column.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'
+        - 2016.downto(1995) do |year|
+          small
+            = construction_index_path year
+    - 2016.downto(1995) do |year|
+      div.d-lg-none.col-2.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'
         small
           = construction_index_path year
-  - 2016.downto(1995) do |year|
-    div.d-lg-none.col-2.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'
-      small
-        = construction_index_path year
-  .col-lg-10.col-12
-    - ConstructionRecord.categories.keys.each do |key|
-      - if @construction_records[key].present?
-        h3.d-flex = construction_category_title key
-        small.text-muted.d-flex
-          = "完工年月 #{JapaneseDate.from_western(Date.new(params[:year].to_i, 6, 1)).date} ~ #{JapaneseDate.from_western(Date.new(params[:year].to_i + 1, 6, 1)).date}"
-        table.table.table-sm.table-striped
-          thead
-            tr
-              th 受注先
-              th 主たる完成工事名
-              th 着工年月
-              th 完工年月
-          tbody
-            - @construction_records[key].each do |construction_record|
+    .col-lg-10.col-12
+      - ConstructionRecord.categories.keys.each do |key|
+        - if @construction_records[key].present?
+          h3.d-flex = construction_category_title key
+          small.text-muted.d-flex
+            = "完工年月 #{JapaneseDate.from_western(Date.new(params[:year].to_i, 6, 1)).date} ~ #{JapaneseDate.from_western(Date.new(params[:year].to_i + 1, 6, 1)).date}"
+          table.table.table-sm.table-striped
+            thead
               tr
-                td = construction_record.customer
-                td = construction_record.title
-                td = JapaneseDate.from_western(construction_record.started_on).date
-                td = JapaneseDate.from_western(construction_record.finished_on).date
+                th 受注先
+                th 主たる完成工事名
+                th 着工年月
+                th 完工年月
+            tbody
+              - @construction_records[key].each do |construction_record|
+                tr
+                  td = construction_record.customer
+                  td = construction_record.title
+                  td = JapaneseDate.from_western(construction_record.started_on).date
+                  td = JapaneseDate.from_western(construction_record.finished_on).date

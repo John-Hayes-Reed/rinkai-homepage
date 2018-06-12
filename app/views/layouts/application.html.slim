@@ -2,6 +2,7 @@ doctype html
 head
   title Rinkai
   = csrf_meta_tags
+  meta name="viewport" content="width=device-width, initial-scale=0.8"
   = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 body.text-center
@@ -10,6 +11,7 @@ body.text-center
       .container
         = link_to '臨海建設工業株式会社', root_path, class: 'navbar-brand'
         button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+          span.mr-1 メニュー
           span.navbar-toggler-icon
         .collapse.navbar-collapse#navbarCollapse
           ul.navbar-nav.mr-auto

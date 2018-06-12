@@ -1,17 +1,18 @@
-.row.mt-4.ml-1.mr-1
-  .col-md-12
-    h3.d-flex = t 'views.navigation.vehicles'
-    table.table.table-sm.table-striped
-      thead
-        tr
-          th 名称
-          th 製造者名
-          th 形式
-          th 数量
-      tbody
-        - @vehicles.each do |vehicle|
+.container.mt-4
+  .row
+    .col-md-12
+      h3.d-flex = t 'views.navigation.vehicles'
+      table.table.table-sm.table-striped
+        thead
           tr
-            td = vehicle.name
-            td = vehicle.make
-            td = vehicle.serial
-            td = vehicle.amount
+            th 名称
+            th 製造者名
+            th 形式
+            th 数量
+        tbody
+          - @vehicles.each do |vehicle|
+            tr
+              td = vehicle.name
+              td = vehicle.make
+              td = vehicle.serial
+              td = vehicle.amount

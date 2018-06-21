@@ -11,7 +11,7 @@ module Admin
     # GET /construction_records
     # GET /construction_records.json
     def index
-      @construction_records = ConstructionRecord.all
+      @construction_records = ConstructionRecord.order(finished_on: :desc)
     end
 
     # GET /construction_records/1

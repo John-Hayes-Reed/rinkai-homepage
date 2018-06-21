@@ -8,14 +8,18 @@
     thead
       tr
         th = Vehicle.human_attribute_name :name
+        th = Vehicle.human_attribute_name :make
+        th = Vehicle.human_attribute_name :serial
         th = Vehicle.human_attribute_name :amount
-        th
-        th
+        th style="width: 15%"
 
     tbody
       - @vehicles.each do |vehicle|
         tr
           td = vehicle.name
+          td = vehicle.make
+          td = vehicle.serial
           td = vehicle.amount
-          td = link_to t('views.forms.edit'), edit_admin_vehicle_path(vehicle), class: 'btn btn-outline-primary btn-sm'
-          td = link_to t('views.forms.destroy'), [:admin, vehicle], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'
+          td
+            = link_to t('views.forms.edit'), edit_admin_vehicle_path(vehicle), class: 'btn btn-outline-primary btn-sm'
+            = link_to t('views.forms.destroy'), [:admin, vehicle], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'

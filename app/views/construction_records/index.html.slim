@@ -1,3 +1,5 @@
+= content_for :pretitle do
+  = "#{t('views.navigation.construction_records')}・"
 .container.mt-4
   .row
     .col-lg-2.d-none.d-lg-block
@@ -18,10 +20,10 @@
           table.table.table-sm.table-striped
             thead
               tr
-                th 受注先
-                th 主たる完成工事名
-                th 着工年月
-                th 完工年月
+                th = ConstructionRecord.human_attribute_name :customer
+                th = ConstructionRecord.human_attribute_name :title
+                th = ConstructionRecord.human_attribute_name :started_on
+                th = ConstructionRecord.human_attribute_name :finished_on
             tbody
               - @construction_records[key].each do |construction_record|
                 tr

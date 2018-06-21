@@ -1,0 +1,40 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+  hello: "Hello world"
+  description: |
+    時代の潮流がますます厳しくなっている社会。
+    その変貌に伴って生活ニーズの多様化、個性化は著しいものです。
+    快適生活を支える土木、建築、開発事業。
+    とりわけ人々の生活に密着した各部門では、多岐にわたる社会のニーズをくみあげ、それらを事業性に取り入れて、トータルシステムで多様化する社会のニーズにこたえられる様、幅広く活躍しています。
+    また単に新しさだけに着眼するのではなく本当に優れているものを社会に創り出していきます。
+    未来に向かってより積極的な事業展開を考え、快適で安全な社会を目指す会社として、最前線で活躍し、社会の発展の為大きく貢献してゆきたく思います。

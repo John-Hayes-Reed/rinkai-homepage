@@ -22,8 +22,14 @@
               tr
                 th = ConstructionRecord.human_attribute_name :customer
                 th = ConstructionRecord.human_attribute_name :title
-                th = ConstructionRecord.human_attribute_name :started_on
-                th = ConstructionRecord.human_attribute_name :finished_on
+                th
+                  span = ConstructionRecord.human_attribute_name(:started_on)[0..1]
+                  br
+                  span = ConstructionRecord.human_attribute_name(:started_on)[2..-1]
+                th
+                  span = ConstructionRecord.human_attribute_name(:finished_on)[0..1]
+                  br
+                  span = ConstructionRecord.human_attribute_name(:finished_on)[2..-1]
             tbody
               - @construction_records[key].each do |construction_record|
                 tr

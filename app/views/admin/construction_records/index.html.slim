@@ -9,21 +9,19 @@
       tr
         th = ConstructionRecord.human_attribute_name :title
         th = ConstructionRecord.human_attribute_name :customer
-        th = ConstructionRecord.human_attribute_name :description
-        th = ConstructionRecord.human_attribute_name :category
-        th = ConstructionRecord.human_attribute_name :started_on
-        th = ConstructionRecord.human_attribute_name :finished_on
-        th
-        th
+        th style="width: 10%" = ConstructionRecord.human_attribute_name :category
+        th style="width: 10%" = ConstructionRecord.human_attribute_name :started_on
+        th style="width: 10%" = ConstructionRecord.human_attribute_name :finished_on
+        th style="width: 15%"
 
     tbody
       - @construction_records.each do |construction_record|
         tr
-          td = construction_record.title
           td = construction_record.customer
-          td = construction_record.description
-          td = construction_record.category
-          td = construction_record.started_on
-          td = construction_record.finished_on
-          td = link_to t('views.forms.edit'), edit_admin_construction_record_path(construction_record), class: 'btn btn-outline-primary btn-sm'
-          td = link_to t('views.forms.destroy'), [:admin, construction_record], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'
+          td = construction_record.title
+          td = construction_category_title(construction_record.category).chop.chop
+          td = l construction_record.started_on.to_date, format: :month_year
+          td = l construction_record.finished_on.to_date, format: :month_year
+          td
+            = link_to t('views.forms.edit'), edit_admin_construction_record_path(construction_record), class: 'btn btn-outline-primary btn-sm'
+            = link_to t('views.forms.destroy'), [:admin, construction_record], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'

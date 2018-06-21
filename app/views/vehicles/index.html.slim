@@ -1,16 +1,16 @@
 = content_for :pretitle do
-  = "#{t('views.navigation.vehicles')}・"
+  = "#{Vehicle.model_name.human}・"
 .container.mt-4
   .row
     .col-md-12
-      h3.d-flex = t 'views.navigation.vehicles'
+      h3.d-flex = Vehicle.model_name.human
       table.table.table-sm.table-striped
         thead
           tr
-            th 名称
-            th 製造者名
-            th 形式
-            th 数量
+            th = Vehicle.human_attribute_name :name
+            th = Vehicle.human_attribute_name :make
+            th = Vehicle.human_attribute_name :serial
+            th = Vehicle.human_attribute_name :amount
         tbody
           - @vehicles.each do |vehicle|
             tr

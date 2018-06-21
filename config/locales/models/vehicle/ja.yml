@@ -4,5 +4,7 @@ ja:
       vehicle: 所有車両
     attributes:
       vehicle:
-        name: 車両名
         amount: 輌数
+        make: 製造者名
+        name: 車両名
+        serial: 形式

@@ -1,10 +1,12 @@
 doctype html
 head
   title = "#{content_for :pretitle}臨海建設工業株式会社"
+  meta name="description" content=t('description')
   = csrf_meta_tags
   meta name="viewport" content="width=device-width, initial-scale=0.8"
   = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  = favicon_link_tag
 body.text-center
   header
     nav.navbar.navbar-expand-lg.navbar-light.fixed-top style="background-color: #e3f2fd;"

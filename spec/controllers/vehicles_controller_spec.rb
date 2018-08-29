@@ -9,7 +9,7 @@ RSpec.describe VehiclesController, type: :controller do
     it "returns http success" do
       vehicle = Vehicle.create! valid_attributes
       get :index
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 

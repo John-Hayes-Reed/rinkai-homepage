@@ -25,7 +25,7 @@ stages:
 rubocop:
   stage: review
   script:
-    - rubocop
+    - bundle exec rubocop
 
 rails-spec:
   stage: test

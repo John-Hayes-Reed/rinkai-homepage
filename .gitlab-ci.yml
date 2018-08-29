@@ -1,4 +1,4 @@
-image: "ruby:2.5.0"
+image: "ruby:2.5.1"
 
 services:
   - postgres:latest
@@ -25,7 +25,7 @@ stages:
 rubocop:
   stage: review
   script:
-    - rubocop
+    - bundle exec rubocop
 
 rails-spec:
   stage: test

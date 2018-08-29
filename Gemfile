@@ -1,4 +1,4 @@
-ruby '2.5.0'
+ruby '2.5.1'
 
 source 'https://rubygems.org'
 
@@ -9,7 +9,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2'
 # Use Postgresql ad the database
 gem 'pg', '~> 1.0.0'
 # Use Puma as the app server
@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bootsnap'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'rubocop', '~> 0.52.1', require: false
+  gem 'rubocop-rspec'
   gem 'rspec-rails', '~> 3.7'
   gem 'simplecov'
 end

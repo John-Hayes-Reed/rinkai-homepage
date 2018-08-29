@@ -10,7 +10,7 @@ RSpec.describe ConstructionRecordsController, type: :controller do
     it "returns http success" do
       construction_record = ConstructionRecord.create! valid_attributes
       get :index, params: { year: 2016 }
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 

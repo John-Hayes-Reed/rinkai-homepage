@@ -12,6 +12,7 @@ AllCops:
     - tmp/**/*
     - spec/**/*
     - config.ru
+    - Guardfile
     - Gemfile
     - Gemfile.lock
     - Rakefile

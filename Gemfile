@@ -19,7 +19,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -49,10 +49,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'factory_bot_rails'
+  gem 'guard'
+  gem 'guard-rspec'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
   gem 'rubocop', '~> 0.52.1', require: false
   gem 'rubocop-rspec'
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails', '= 3.8'
   gem 'simplecov'
 end
 

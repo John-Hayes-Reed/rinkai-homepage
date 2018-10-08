@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Construction Records index request', type: :request do
+  before { create_global_information! }
+
   it 'returns a successful response with a list of construction records' do
     # Arrange
     valid_attributes = build(:construction_record).attributes

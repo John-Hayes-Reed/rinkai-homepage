@@ -157,6 +157,40 @@
         null,
         1,
         1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        27,
+        null,
+        null
+      ],
+      "/Users/johnhayes-reed/gitlab/rinkai-homepage/app/controllers/admin/vehicles/global_app_informations_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/johnhayes-reed/gitlab/rinkai-homepage/app/controllers/admin/vehicles_controller.rb": [
@@ -272,6 +306,15 @@
         null,
         null
       ],
+      "/Users/johnhayes-reed/gitlab/rinkai-homepage/app/models/global_app_information.rb": [
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/johnhayes-reed/gitlab/rinkai-homepage/app/models/vehicle.rb": [
         null,
         null,
@@ -362,6 +405,24 @@
         null
       ]
     },
+<<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1536494656
+=======
+    "timestamp": 1539013809
+>>>>>>> 5cedb79... Resolve "Setup active storage"
+=======
+<<<<<<< HEAD
+    "timestamp": 1539013809
+=======
+    "timestamp": 1536494656
+>>>>>>> d4362e6... moved logo and title to top
+=======
+    "timestamp": 1536494656
+=======
+    "timestamp": 1539013809
+>>>>>>> 5cedb79... Resolve "Setup active storage"
+>>>>>>> 3204000... Resolve "Setup active storage"
+>>>>>>> 2e39748... Conflict resolution
   }
 }

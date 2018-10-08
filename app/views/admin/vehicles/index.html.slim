@@ -23,3 +23,25 @@
           td
             = link_to t('views.forms.edit'), edit_admin_vehicle_path(vehicle), class: 'btn btn-outline-primary btn-sm'
             = link_to t('views.forms.destroy'), [:admin, vehicle], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger btn-sm'
+
+  h2.mt-5
+    = Vehicle.model_name.human
+    |ページに出る写真
+  .row.pt-2.border-top
+    .col-12
+      = form_for [:admin, :vehicles, @global_app_information] do |f|
+        .form-row.align-items-center
+          .custom-file.col-9
+            = f.file_field :vehicle_images, multiple: true, class: 'custom-file-input', id: 'customFileLang', lang: 'jp'
+            = f.label :choose_file, class: 'custom-file-label'
+              |ファイルを選択する
+          .col-auto
+            = f.submit t('views.forms.save'), class: 'btn btn-outline-primary'
+
+  .row.mt-3
+    - @global_app_information.vehicle_images.each do |vehicle_image|
+      .col-6.col-lg-3
+        .card
+          = image_tag vehicle_image.variant(resize: '100x100'), class: 'card-img-top'
+          .card-body
+            = link_to t('views.forms.destroy'), admin_vehicles_global_app_information_path(vehicle_image), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger col align-self-center'

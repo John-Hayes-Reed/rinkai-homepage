@@ -406,9 +406,23 @@
       ]
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1536494656
 =======
     "timestamp": 1539013809
 >>>>>>> 5cedb79... Resolve "Setup active storage"
+=======
+<<<<<<< HEAD
+    "timestamp": 1539013809
+=======
+    "timestamp": 1536494656
+>>>>>>> d4362e6... moved logo and title to top
+=======
+    "timestamp": 1536494656
+=======
+    "timestamp": 1539013809
+>>>>>>> 5cedb79... Resolve "Setup active storage"
+>>>>>>> 3204000... Resolve "Setup active storage"
+>>>>>>> 2e39748... Conflict resolution
   }
 }

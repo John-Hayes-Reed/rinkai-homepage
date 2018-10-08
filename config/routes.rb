@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :vehicles
     resources :construction_records
+    namespace :vehicles do
+      resources :global_app_informations, only: [:update, :destroy]
+    end
   end
 end

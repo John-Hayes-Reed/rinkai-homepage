@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe VehiclesController, type: :controller do
+  before do
+    create_global_information!
+  end
   let(:valid_attributes) do
     build(:vehicle).attributes
   end

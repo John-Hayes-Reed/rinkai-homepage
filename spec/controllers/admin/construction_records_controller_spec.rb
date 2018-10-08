@@ -29,6 +29,7 @@ RSpec.describe Admin::ConstructionRecordsController, type: :controller do
   end
   before do
     sign_in administrator
+    create_global_information!
   end
 
   # This should return the minimal set of attributes required to create a valid

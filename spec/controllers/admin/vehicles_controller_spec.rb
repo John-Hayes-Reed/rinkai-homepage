@@ -29,6 +29,7 @@ RSpec.describe Admin::VehiclesController, type: :controller do
   end
   before do
     sign_in administrator
+    create_global_information!
   end
 
 

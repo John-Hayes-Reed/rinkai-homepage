@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
+  before do
+    create_global_information!
+  end
 
   describe "GET #index" do
     it "returns http success" do

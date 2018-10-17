@@ -18,3 +18,7 @@
               td = vehicle.make
               td = vehicle.serial
               td = vehicle.amount
+  .row
+    - @global_app_information.vehicle_images.each do |vehicle_image|
+      .col-12.col-lg-6
+        = image_tag vehicle_image, class: 'rounded img-fluid mt-1'

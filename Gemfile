@@ -44,6 +44,8 @@ gem 'bottled_decorators', '~> 0.1.5'
 gem 'devise'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'redcarpet'
+gem 'coderay'
 gem 'slim-rails'
 
 group :development, :test do

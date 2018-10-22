@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      company_profile: 会社概要
+    attributes:
+      company_profile:
+        body: 本文

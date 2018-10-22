@@ -15,13 +15,13 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard :rspec, cmd: 'bundle exec rspec --format documentation' do
+guard :rspec, cmd: 'bundle exec rspec' do
   watch('spec/spec_helper.rb') { |m| 'spec' }
   watch('config/routes.rb') { |m| 'spec/routing' }
   watch('app/controllers/application_controller.rb') { |m| ['spec/requests', 'spec/controllers'] }
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^app/(.*)(\.erb|\.haml|\.slim)$})          { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
+  watch(%r{^app/views/(.*)/(.*.html)(\.erb|\.haml|\.slim)$}) { |m| ["spec/requests/#{m[1]}_spec.rb", "spec/views/#{m[1]}/#{m[2]}#{m[3]}_spec.rb"] }
   watch(%r{^lib/(.+)\.rb$})                           { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| ["spec/routing/#{m[1]}_routing_spec.rb", "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb", "spec/acceptance/#{m[1]}_spec.rb", "spec/requests/#{m[1]}_spec.rb"] }
 end

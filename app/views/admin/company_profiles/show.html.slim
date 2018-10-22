@@ -1,0 +1,11 @@
+.container.text-left.mt-3
+  h1
+    = CompanyProfile.model_name.human
+
+  - if @company_profile.new_record?
+    = link_to t('views.forms.edit'), new_admin_company_profile_path, class: 'btn btn-outline-primary btn-sm'
+  - else
+    = link_to t('views.forms.edit'), edit_admin_company_profile_path, class: 'btn btn-outline-primary btn-sm'
+
+  .row.mt-4
+    .col-12 = markdown(@company_profile.body) if @company_profile.body

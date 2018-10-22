@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      historical_record: 沿革
+    attributes:
+      historical_record:
+        title: タイトル
+        body: 本文

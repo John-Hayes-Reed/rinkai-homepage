@@ -1,0 +1,13 @@
+= form_for @company_profile, url: admin_company_profile_path, class: 'form-inline' do |f|
+  - if @company_profile.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@company_profile.errors.count, "error")} prohibited this company_profile from being saved:"
+      ul
+        - @company_profile.errors.full_messages.each do |message|
+          li = message
+  .row
+    .col-12
+      .form-group
+        = f.label :body
+        = f.text_area :body, rows: 15, class: 'form-control'
+      .actions = f.submit t('views.forms.save'), class: 'btn btn-outline-primary'

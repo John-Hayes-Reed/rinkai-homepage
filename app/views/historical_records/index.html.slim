@@ -1,9 +1,10 @@
 = content_for :pretitle
   = "#{HistoricalRecord.model_name.human}・"
 .container.mt-4
-  .row.mb-5
+  .row.mb-4
     .col-12
       h3 = HistoricalRecord.model_name.human
+  hr
   - HistoricalRecord.all.each do |historical_record|
     .row
       .col-12.col-md-4.text-right

@@ -2,6 +2,8 @@ ja:
   views:
     navigation:
       construction_records: 主な施工実績
-      vehicles: 所有車両
       construction_records_admin: 主な施工実績管理
+      historical_records: 沿革
+      historical_records_admin: 沿革管理
+      vehicles: 所有車両
       vehicles_admin: 所有車両管理

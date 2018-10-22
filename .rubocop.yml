@@ -17,3 +17,6 @@ AllCops:
     - Gemfile.lock
     - Rakefile
     - Readme.md
+Metrics/LineLength:
+  Exclude:
+    - app/controllers/**/*

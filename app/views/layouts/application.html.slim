@@ -18,6 +18,8 @@ body.text-center
         .collapse.navbar-collapse#navbarCollapse
           - if administrator_signed_in?
             ul.navbar-nav.mr-auto
+              li.nav_item
+                = link_to t('views.navigation.historical_records_admin'), admin_historical_records_path, class: 'nav-link'
               li.nav-item
                 = link_to t('views.navigation.construction_records_admin'), admin_construction_records_path, class: 'nav-link'
               li.nav_item
@@ -27,6 +29,8 @@ body.text-center
             ul.navbar-nav.mr-auto
               li.nav-item class="#{'active' if params[:controller] == 'home'}"
                 = link_to 'ホーム', root_path, class: 'nav-link'
+              li.nav-item class="#{'active' if params[:controller] == 'historical_records'}"
+                = link_to HistoricalRecord.model_name.human, historical_records_path, class: 'nav-link'
               li.nav-item class="#{'active' if params[:controller] == 'construction_records'}"
                 = link_to ConstructionRecord.model_name.human, construction_records_path(year: 2016), class: 'nav-link'
               li.nav-item class="#{'active' if params[:controller] == 'vehicles'}"

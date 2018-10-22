@@ -14,10 +14,10 @@
     .col-lg-10.col-12
       - ConstructionRecord.categories.keys.each do |key|
         - if @construction_records[key].present?
-          h3.d-flex = construction_category_title key
-          small.text-muted.d-flex
+          h3 = construction_category_title key
+          small.text-muted
             = "完工年月 #{JapaneseDate.from_western(Date.new(params[:year].to_i, 6, 1)).date} ~ #{JapaneseDate.from_western(Date.new(params[:year].to_i + 1, 6, 1)).date}"
-          table.table.table-sm.table-striped
+          table.table.table-sm.table-striped.mt-3.mb-5
             thead
               tr
                 th = ConstructionRecord.human_attribute_name :customer

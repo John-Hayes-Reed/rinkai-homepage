@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
   resources :vehicles, only: [:index]
   resources :construction_records, only: [:index], path: 'construction_records/:year'
+  resources :historical_records, only: [:index]
 
   namespace :admin do
     resources :vehicles
     resources :construction_records
+    resources :historical_records
     namespace :vehicles do
       resources :global_app_informations, only: [:update, :destroy]
     end

@@ -1,0 +1,19 @@
+.container.text-left.mt-3.mb-2
+  h1
+    = HistoricalRecord.model_name.human
+    |の一覧
+  = link_to t('views.forms.new'), new_admin_historical_record_path, class: 'btn btn-outline-primary mb-2'
+  table.table
+    thead
+      tr
+        th style="width: 30%" = HistoricalRecord.human_attribute_name :title
+        th style="width: 55%" = HistoricalRecord.human_attribute_name :body
+        th style="width: 15%"
+    tbody
+      - @historical_records.each do |historical_record|
+        tr
+          td = historical_record.title
+          td = historical_record.body
+          td
+            = link_to t('views.forms.edit'), edit_admin_historical_record_path(historical_record), class: 'btn btn-outline-primary btn-sm'
+            = link_to t('views.forms.destroy'), [:admin, historical_record], data: { confirm: t('views.confirmations.before_destroy') }, method: :delete, class: 'btn btn-outline-danger btn-sm'

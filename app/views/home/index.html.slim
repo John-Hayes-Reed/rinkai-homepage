@@ -3,37 +3,9 @@
   #myCarousel.carousel.slide data-ride="carousel"
     ol.carousel-indicators
       li.active data-target="#myCarousel" data-slide-to="0"
-      li data-target="#myCarousel" data-slide-to="1"
-      li data-target="#myCarousel" data-slide-to="2"
-      li data-target="#myCarousel" data-slide-to="3"
     .carousel-inner
       .carousel-item.active
         = image_tag 'rinkai_image_1.JPG', class: 'first-slide d-block w-100'
-        .container
-          .carousel-caption.text-left.upper-caption.d-none.d-lg-block
-            h1 写真のタイトル
-            p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
-      .carousel-item
-        = image_tag 'rinkai_image_2.JPG', class: 'second-slide d-block w-100'
-        .container
-          .carousel-caption.text-left.mid-caption.d-none.d-lg-block
-            h1 写真のタイトル
-            p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
-      .carousel-item
-        = image_tag 'rinkai_image_3.JPG', class: 'third-slide d-block w-100'
-        .container
-          .carousel-caption.text-center.upper-caption.d-none.d-lg-block
-            h1 写真のタイトル
-            p 大ちゃん、この写真のタイトルとちょっとした説明文を書いて下さい。
-      .carousel-item
-        = image_tag 'rinkai_image_4.JPG', class: 'third-slide d-block w-100'
-
-    a.carousel-control-prev href="#myCarousel" role="button" data-slide="prev"
-      span.carousel-control-prev-icon aria-hidden="true"
-      span.sr-only Previous
-    a.carousel-control-next href="#myCarousel" role="button" data-slide="next"
-      span.carousel-control-next-icon aria-hidden="true"
-      span.sr-only Next
 
 .container
 
@@ -77,93 +49,24 @@
   .row.featurette
     .col-lg-4.col-12.order-lg-2
       h2.featurette-heading
-        |会社概要
-    .col-lg-8.col-12.order-lg-1.text-left.d-none.d-lg-block
-      p
-        strong 所在地
-        |&nbsp;&nbsp;〒670-0966　兵庫県姫路市延末86-5（姫路市文化センター　東隣り）
-      p
-        strong 連絡先
-        |&nbsp;&nbsp;TEL：079-294-3326
-        |&nbsp;&nbsp;&nbsp;&nbsp;FAX：079-292-6396
-      p
-        strong 創業
-        |&nbsp;&nbsp;昭和37年10月15日
-      p
-        strong 資本金
-        |&nbsp;&nbsp;3,000万円
-      p
-        strong 代表者
-        |&nbsp;&nbsp;岩田　大輔
-      p
-        strong 事業内容
-        |&nbsp;&nbsp;土木工事業・建築工事業・宅地建物取引業 他
-      p
-        strong 各種資格
-      ul
-        li
-          |建設許可番号（土木・建築・舗装・大工・石・タイル・レンガ・ブロック・鉄筋・しゅんせつ・内装仕上・鳶・屋根・ 鋼構造物・塗装・水道施設）
-          br
-          |兵庫県知事（特－27）第460085号　平成27年6月30日
-        li 一級建築士事務所登録番号　　　（一級）第450908号
-        li 宅地建物取引業者　　　兵庫県知事（5）第450869号
-    .col-lg-8.col-12.order-lg-1.text-center.d-lg-none.mt-3
-      p
-        strong 所在地
-        br
-        |&nbsp;&nbsp;〒670-0966　兵庫県姫路市延末86-5（姫路市文化センター　東隣り）
-      p
-        strong 連絡先
-        br
-        |&nbsp;&nbsp;TEL：079-294-3326
-        |&nbsp;&nbsp;&nbsp;&nbsp;FAX：079-292-6396
-      p
-        strong 創業
-        br
-        |&nbsp;&nbsp;昭和37年10月15日
-      p
-        strong 資本金
-        br
-        |&nbsp;&nbsp;3,000万円
-      p
-        strong 代表者
-        br
-        |&nbsp;&nbsp;岩田　大輔
-      p
-        strong 事業内容
-        br
-        |&nbsp;&nbsp;土木工事業・建築工事業・宅地建物取引業 他
-      p
-        strong 各種資格
-        br
-        |建設許可番号（土木・建築・舗装・大工・石・タイル・レンガ・ブロック・鉄筋・しゅんせつ・内装仕上・鳶・屋根・ 鋼構造物・塗装・水道施設）
-      p 兵庫県知事（特－27）第460085号　平成27年6月30日
-      p 一級建築士事務所登録番号　　　（一級）第450908号
-      p 宅地建物取引業者　　　兵庫県知事（5）第450869号
-
-  hr.featurette-divider
-
-  .row.featurette
-    .col-lg-4.col-12
-      h2.featurette-heading
         |タイトル
-    .col-lg-8.col-12
+    .col-lg-8.col-12.order-lg-1
       = video_tag('rinkai_01', autobuffer: true, controls: true, class: 'home-vid')
 
   hr.featurette-divider
 
   .row.featurette
-    .col-lg-4.col-12.order-lg-2
+    .col-lg-4.col-12.order-lg-1
       h2.featurette-heading
         |タイトル
-    .col-lg-8.col-12.order-lg-1
+    .col-lg-8.col-12.order-lg-2
       = video_tag('rinkai_02', autobuffer: true, controls: true, class: 'home-vid')
 
   hr.featurette-divider
 
   .row.featurette.mb-5
-    .col-lg-4.col-12
+    .col-lg-4.col-12.order-lg-2
       h2.featurette-heading
         |タイトル
-    .col-lg-8.col-12
+    .col-lg-8.col-12.order-lg-1
       = video_tag('rinkai_03', autobuffer: true, controls: true, class: 'home-vid')

@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     resource :company_profile, except: [:destroy]
     resources :construction_records
     resources :historical_records
+    resources :information_panels, except: :show do
+      get 'move_higher', on: :member
+      get 'move_lower', on: :member
+    end
     resources :vehicles
     namespace :vehicles do
       resources :global_app_informations, only: [:update, :destroy]

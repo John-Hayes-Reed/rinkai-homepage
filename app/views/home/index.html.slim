@@ -15,8 +15,6 @@
         |運営会社情報
       p.lead.text-muted
         |快適な暮らしの創造へ
-        / .text-muted
-        /   small ～胸躍る感動をお届けするのも私たちの仕事です～
     .col-lg-8.col-12.text-left.d-none.d-lg-block
       p
         |時代の潮流がますます厳しくなっている社会。
@@ -46,27 +44,23 @@
 
   hr.featurette-divider
 
-  .row.featurette
-    .col-lg-4.col-12.order-lg-2
-      h2.featurette-heading
-        |タイトル
-    .col-lg-8.col-12.order-lg-1
-      = video_tag('rinkai_01', autobuffer: true, controls: true, class: 'home-vid')
+  - @information_panels.in_groups_of(2) do |panel_group|
+    - first_panel = panel_group.first
+    .row.featurette
+      .col-12.col-md-7.order-md-2
+        h2.featurette-heading.mb-4 = first_panel.title
+        p = simple_format(first_panel.body)
+      .col-12.col-md-5.order-md-1
+        = image_tag first_panel.panel_image, class: 'rounded img-fluid mt-1' if first_panel.panel_image.attached?
 
-  hr.featurette-divider
+    hr.featurette-divider
 
-  .row.featurette
-    .col-lg-4.col-12.order-lg-1
-      h2.featurette-heading
-        |タイトル
-    .col-lg-8.col-12.order-lg-2
-      = video_tag('rinkai_02', autobuffer: true, controls: true, class: 'home-vid')
+    - if (second_panel = panel_group.second)
+      .row.featurette
+        .col-12.col-md-7
+          h2.featurette-heading.mb-4 = second_panel.title
+          p = simple_format(second_panel.body)
+        .col-12.col-md-5
+          = image_tag second_panel.panel_image, class: 'rounded img-fluid mt-1' if second_panel.panel_image.attached?
 
-  hr.featurette-divider
-
-  .row.featurette.mb-5
-    .col-lg-4.col-12.order-lg-2
-      h2.featurette-heading
-        |タイトル
-    .col-lg-8.col-12.order-lg-1
-      = video_tag('rinkai_03', autobuffer: true, controls: true, class: 'home-vid')
+      hr.featurette-divider

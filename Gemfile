@@ -36,7 +36,7 @@ gem 'bootsnap'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
+gem 'acts_as_list', '~> 0.8.0'
 gem "aws-sdk-s3", require: false
 gem 'bootstrap', '~> 4.0.0'
 gem 'bottled_services', '~> 1.0.0.alpha'

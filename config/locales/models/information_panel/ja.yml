@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      information_panel: 情報パネル
+    attributes:
+      information_panel:
+        title: タイトル
+        body: 説明文
+        panel_image: パネル写真
+        position: 順番

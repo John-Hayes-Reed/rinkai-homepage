@@ -19,6 +19,8 @@ body.text-center
           - if administrator_signed_in?
             ul.navbar-nav.mr-auto
               li.nav-item
+                = link_to t('views.navigation.information_panel_admin'), admin_information_panels_path, class: 'nav-link'
+              li.nav-item
                 = link_to t('views.navigation.company_profile_admin'), admin_company_profile_path, class: 'nav-link'
               li.nav_item
                 = link_to t('views.navigation.historical_records_admin'), admin_historical_records_path, class: 'nav-link'

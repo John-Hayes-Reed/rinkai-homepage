@@ -1,0 +1,21 @@
+.container.text-left.mt-3.mb-2
+  h1
+    = InformationPanel.model_name.human
+    |の一覧
+  = link_to t('views.forms.new'), new_admin_information_panel_path, class: 'btn btn-outline-primary mb-2'
+  table.table
+    thead
+      tr
+        th style="width: 25%" = InformationPanel.human_attribute_name :title
+        th style="width: 50%" = InformationPanel.human_attribute_name :body
+        th style="width: 10%" = InformationPanel.human_attribute_name :position
+        th style="width: 15%"
+    tbody
+      - @information_panels.each do |information_panel|
+        tr
+          td = information_panel.title
+          td = information_panel.body
+          td = information_panel.position
+          td
+            = link_to t('views.forms.edit'), edit_admin_information_panel_path(information_panel), class: 'btn btn-outline-primary btn-sm'
+            = link_to t('views.forms.destroy'), [:admin, information_panel], data: { confirm: t('views.confirmations.before_destroy') }, method: :delete, class: 'btn btn-outline-danger btn-sm'

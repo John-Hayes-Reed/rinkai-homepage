@@ -6,8 +6,203 @@
         - @company_profile.errors.full_messages.each do |message|
           li = message
   .row
-    .col-12
+    .col-12.col-md-9
       .form-group
         = f.label :body
         = f.text_area :body, rows: 15, class: 'form-control'
       .actions = f.submit t('views.forms.save'), class: 'btn btn-outline-primary'
+    .col-12.col-md-3
+      h3.mb-4 マークダウン使い方
+      h4 テキストスタイル
+      p
+        strong イタリック
+        br
+        |文字の前と後に「*」を一つ
+        br
+        |例：*テキスト*
+      p
+        strong 太字
+        br
+        |文字の前と後に「**」を二つ
+        br
+        |例：**テキスト**
+      p
+        button.btn.btn-sm.btn-primary data-target="#textStyleModal" data-toggle="modal" type="button"
+          |もっと詳しくを
+      hr
+      h4 ヘッダーテキスト
+      p
+        |ヘッダー１（最大のヘッダー）からヘッダー６（最小のヘッダー）まではヘッダー番の数を「#」入力
+      p
+        |例：# 私のタイトル
+        br
+        |例：### 私のタイトル
+        br
+        |例：###### 私のタイトル
+      p
+        button.btn.btn-sm.btn-primary data-target="#headerModal" data-toggle="modal" type="button"
+          |もっと詳しくを
+      hr
+      h4 リスト
+      p
+        |リストを作るにはそれぞれの行の前にハイフン「-」を入力
+      p
+        |例：- リストの一行目
+        br
+        |　　- リストの二行目
+        br
+        |　　- リストの三行目
+      p
+        button.btn.btn-sm.btn-primary data-target="#listModal" data-toggle="modal" type="button"
+          |もっと詳しくを
+
+/! Text Style Modal
+#textStyleModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h3#textStyleModalLabel.modal-title テキストスタイルの例
+        button.close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  &times;
+      .modal-body
+        h4 イタリック
+        p
+          strong 入力：
+          br
+          |イタリックテキスト*の例の文章*です。
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("イタリックテキスト*の例の文章*です。")
+        hr
+        h4 太字
+        p
+          strong 入力：
+          br
+          |太字のテキスト**の例の文章**です。
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("太字のテキスト**の例の文章**です。")
+      .modal-footer
+        button.btn.btn-secondary data-dismiss="modal" type="button" 閉じる
+
+/! Header Modal
+#headerModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h3#headerModalLabel.modal-title ヘッダーの例
+        button.close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  &times;
+      .modal-body
+        h4 ヘッダー１
+        p
+          strong 入力：
+          br
+          |# 例のヘッダーテキスト
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("# 例のヘッダーテキスト")
+        hr
+        h4 ヘッダー２
+        p
+          strong 入力：
+          br
+          |## 例のヘッダーテキスト
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("## 例のヘッダーテキスト")
+        hr
+        h4 ヘッダー３
+        p
+          strong 入力：
+          br
+          |### 例のヘッダーテキスト
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("### 例のヘッダーテキスト")
+        hr
+        h4 ヘッダー４
+        p
+          strong 入力：
+          br
+          |#### 例のヘッダーテキスト
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("#### 例のヘッダーテキスト")
+        hr
+        h4 ヘッダー５
+        p
+          strong 入力：
+          br
+          |##### 例のヘッダーテキスト
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("##### 例のヘッダーテキスト")
+        hr
+        h4 ヘッダー６
+        p
+          strong 入力：
+          br
+          |###### 例のヘッダーテキスト
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("###### 例のヘッダーテキスト")
+        hr
+      .modal-footer
+        button.btn.btn-secondary data-dismiss="modal" type="button" 閉じる
+
+/! List Modal
+#listModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h3#listModalLabel.modal-title リストの例
+        button.close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  &times;
+      .modal-body
+        h4 普通のリスト
+        p
+          strong 入力：
+          br
+          |- リストの一行目
+          br
+          |- リストの二行目
+          br
+          |- リストの三行目。
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("- リストの一行目\n- リストの二行目\n- リストの三行目")
+        hr
+        h4
+          |リストの中にリストを
+          br
+          small.text-muted 前に二つの半角空白を入力
+        p
+          strong 入力：
+          br
+          |- リストの一行目
+          br
+          |- リストの二行目
+          br
+          |&nbsp;&nbsp;- 中のリストの一行目
+          br
+          |&nbsp;&nbsp;- 中のリストの二行目
+          br
+          |&nbsp;&nbsp;- 中のリストの三行目
+          br
+          |- リストの三行目。
+        p
+          strong サイトに表示されるのは：
+          br
+          = markdown("- リストの一行目\n- リストの二行目\n  - 中のリストの一行目\n  - 中のリストの二行目\n  - 中のリストの三行目\n- リストの三行目")
+      .modal-footer
+        button.btn.btn-secondary data-dismiss="modal" type="button" 閉じる

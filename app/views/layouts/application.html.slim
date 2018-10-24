@@ -1,5 +1,6 @@
 doctype html
 head
+  meta charset="UTF-8"
   title = "#{content_for :pretitle}臨海建設工業株式会社"
   meta name="description" content=t('description')
   = csrf_meta_tags
@@ -10,10 +11,11 @@ head
   = favicon_link_tag
 body.text-center
   header
-    nav.navbar.navbar-expand-lg.navbar-light.fixed-top style="background-color: #e3f2fd;"
+    .container
+      = image_tag 'logo_with_text.png', class: 'img-fluid img-hero' if params[:controller] == 'home'
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top
       .container
-        = link_to '臨海建設工業株式会社', root_path, class: 'navbar-brand'
-        button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+        button.navbar-toggler.ml-auto type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
           span.mr-1 メニュー
           span.navbar-toggler-icon
         .collapse.navbar-collapse#navbarCollapse
@@ -23,11 +25,11 @@ body.text-center
                 = link_to t('views.navigation.information_panel_admin'), admin_information_panels_path, class: 'nav-link'
               li.nav-item
                 = link_to t('views.navigation.company_profile_admin'), admin_company_profile_path, class: 'nav-link'
-              li.nav_item
+              li.nav-item
                 = link_to t('views.navigation.historical_records_admin'), admin_historical_records_path, class: 'nav-link'
               li.nav-item
                 = link_to t('views.navigation.construction_records_admin'), admin_construction_records_path, class: 'nav-link'
-              li.nav_item
+              li.nav-item
                 = link_to t('views.navigation.vehicles_admin'), admin_vehicles_path, class: 'nav-link'
             = link_to 'ログアウト', destroy_administrator_session_path, method: :delete, class: 'btn btn-outline-danger ml-auto'
           - else

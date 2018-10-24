@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :administrators
+  authenticated :administrator do
+    root 'admin/information_panels#index', as: :authenticated_root
+  end
+
   root 'home#index'
 
   resource :company_profile, only: :show

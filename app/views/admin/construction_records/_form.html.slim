@@ -28,7 +28,7 @@
       .form-group
         = f.label :started_on
         .row
-          = f.date_select :started_on, { start_year: 1950, discard_day: true }, { class: 'form-control form-control-sm col mr-1' }
+          = f.date_select :created_at, { start_year: 1950, discard_day: true }, { class: 'form-control form-control-sm col mr-1' }
     .col-sm-12.col-md-6
       .form-group
         = f.label :finished_on

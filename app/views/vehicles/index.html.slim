@@ -1,9 +1,11 @@
 = content_for :pretitle do
   = "#{Vehicle.model_name.human}・"
 .container.mt-4
+  .row.mb-4
+    .col-12.text-left
+      h1 = Vehicle.model_name.human
   .row
     .col-md-12
-      h3.mb-5 = Vehicle.model_name.human
       table.table.table-sm.table-striped
         thead
           tr

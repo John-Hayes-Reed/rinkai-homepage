@@ -1,9 +1,21 @@
 == render 'pretitle'
 .container.text-left.mt-3.mb-2
-  h1
-    = Vehicle.model_name.human
-    |の一覧
-  = link_to t('views.forms.new'), new_admin_vehicle_path, class: 'btn btn-outline-primary mb-2'
+  .row
+    .col-12.col-md-6
+      h1
+        = Vehicle.model_name.human
+        |の一覧
+      = link_to t('views.forms.new'), new_admin_vehicle_path, class: 'btn btn-outline-primary mb-2'
+    .col-12.col-md-6
+      h6
+        = Vehicle.model_name.human
+        |ページに表示される写真追加
+      = form_for [:admin, :vehicles, @global_app_information], class: 'form-inline' do |f|
+        .row
+          .col
+            = f.file_field :vehicle_images, multiple: true, class: 'form-control-file'
+          .col
+            = f.submit t('views.forms.save'), class: 'btn btn-sm btn-outline-primary'
   table.table
     thead
       tr
@@ -26,17 +38,7 @@
 
   h2.mt-5
     = Vehicle.model_name.human
-    |ページに出る写真
-  .row.pt-2.border-top
-    .col-12
-      = form_for [:admin, :vehicles, @global_app_information] do |f|
-        .form-row.align-items-center
-          .custom-file.col-9
-            = f.file_field :vehicle_images, multiple: true, class: 'custom-file-input', id: 'customFileLang', lang: 'jp'
-            = f.label :choose_file, class: 'custom-file-label'
-              |ファイルを選択する
-          .col-auto
-            = f.submit t('views.forms.save'), class: 'btn btn-outline-primary'
+    |ページに表示される写真
 
   .row.mt-3
     - @global_app_information.vehicle_images.each do |vehicle_image|

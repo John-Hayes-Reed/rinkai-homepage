@@ -7,5 +7,7 @@ ja:
         category: 部
         customer: 受注先
         finished_on: 完工年月
+        finished_year: 完工年
         started_on: 着工年月
+        started_year: 着工年
         title: 主たる完成工事名

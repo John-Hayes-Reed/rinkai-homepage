@@ -1,6 +1,10 @@
 = content_for :pretitle do
   = "#{t('views.navigation.construction_records')}・"
 .container.mt-4
+  .row.mb-4
+    .col-12.text-left
+      h1 = ConstructionRecord.model_name.human
+  hr
   .row
     .col-lg-2.d-none.d-lg-block
       div.d-flex.flex-column.nav-pills#v-pills-tab role='tablist' aria-orientation='vertical'

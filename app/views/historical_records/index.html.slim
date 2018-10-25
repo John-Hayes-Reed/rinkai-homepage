@@ -1,12 +1,13 @@
 = content_for :pretitle
   = "#{HistoricalRecord.model_name.human}・"
 .container.mt-4
-  .row.mb-5
-    .col-12
-      h3 = HistoricalRecord.model_name.human
-  - HistoricalRecord.all.each do |historical_record|
-    .row
-      .col-12.col-md-4.text-right
+  .row.mb-4
+    .col-12.text-left
+      h1 = HistoricalRecord.model_name.human
+  hr
+  - @historical_records.each do |historical_record|
+    .row.mb-3
+      .col-12.col-md-4.text-left
         strong = historical_record.title
       .col-12.col-md-8.text-left
         = historical_record.body

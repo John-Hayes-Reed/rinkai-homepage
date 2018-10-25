@@ -1,8 +1,141 @@
+html {
+  font-size: 1rem;
+}
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=13L0u0k7UUa3cZA5wXlaiQ5cFL3 */
+
+/* Feel free to copy&paste color codes to your application */
+
+
+/* As hex codes */
+//$color-primary-0: #D6E0F5;	// Main Primary color */
+//$color-primary-1: #F8FAFE;
+//$color-primary-2: #E9EFFB;
+//$color-primary-3: #C0CFEC;
+//$color-primary-4: #A9BBE0;
+
+$color-primary-0: #CCDCFA;	// Main Primary color */
+$color-primary-1: #FCFDFF;
+$color-primary-2: #E4EDFE;
+$color-primary-3: #B4CAF5;
+$color-primary-4: #9DB8ED;
+$color-primary-5: darken($color-primary-4, 15%);
+$color-primary-6: darken($color-primary-5, 15%);
+
 body {
-  padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
-  //background-color: #c3d9ff;
+  background-color: $color-primary-1;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Kosugi Maru', sans-serif;
+    color: $color-primary-5;
+
+    &.hero-header {
+      font-family: 'Kouzan Gyousho';
+      color: $color-primary-6;
+    }
+  }
+
+  .lead.text-muted {
+    color: $color-primary-4 !important;
+  }
+  nav.navbar {
+    background-color: $color-primary-1;
+    .nav-item {
+      font-size: 1.2rem;
+
+      .nav-link {
+        color: $color-primary-5 !important;
+        &:hover {
+          color: $color-primary-4 !important;
+        }
+      }
+
+      &.active {
+        .nav-link {
+          border-bottom: 3px solid;
+          padding-bottom: 0;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    .nav-item,
+    .navbar-brand {
+      color: $color-primary-5;
+      font-family: 'Kosugi', sans-serif;
+
+      &:hover {
+        color: $color-primary-5;
+      }
+    }
+  }
+
+  .img-hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.hero-header {
+    font-size: 2rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &.hero-header {
+      font-size: 3rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &.hero-header {
+      font-size: 4rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &.hero-header {
+      font-size: 5.8rem;
+    }
+  }
 }
 
 .carousel {

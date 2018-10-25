@@ -1,0 +1,11 @@
+= content_for :pretitle
+  = "#{CompanyProfile.model_name.human}・"
+.container.mt-4
+  .row.mb-4
+    .col-12.text-left
+      h1 = CompanyProfile.model_name.human
+  hr
+  .row
+    .col-12.text-left
+      - if @company_profile.body
+        = markdown(@company_profile.body)

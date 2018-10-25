@@ -2,5 +2,7 @@
 
 # The main Control class for Home pages.
 class HomeController < ApplicationController
-  def index; end
+  def index
+    @information_panels = InformationPanel.order(:position).all
+  end
 end

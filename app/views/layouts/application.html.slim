@@ -1,42 +1,52 @@
 doctype html
 head
+  meta charset="UTF-8"
   title = "#{content_for :pretitle}臨海建設工業株式会社"
   meta name="description" content=t('description')
   = csrf_meta_tags
   meta name="viewport" content="width=device-width, initial-scale=0.8"
+  link href="https://fonts.googleapis.com/css?family=Kosugi|Kosugi+Maru" rel="stylesheet"
   = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   = favicon_link_tag
 body.text-center
   header
-    nav.navbar.navbar-expand-lg.navbar-light.fixed-top style="background-color: #e3f2fd;"
+    .container
+      - if params[:controller] == 'home'
+        = image_tag 'logo.png', class: 'img-fluid img-hero'
+        h1.hero-header 臨海建設工業株式会社
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top
       .container
-        = link_to '臨海建設工業株式会社', root_path, class: 'navbar-brand'
-        button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+        button.navbar-toggler.ml-auto type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
           span.mr-1 メニュー
           span.navbar-toggler-icon
         .collapse.navbar-collapse#navbarCollapse
           - if administrator_signed_in?
             ul.navbar-nav.mr-auto
-              li.nav_item
+              li.nav-item
+                = link_to t('views.navigation.information_panel_admin'), admin_information_panels_path, class: 'nav-link'
+              li.nav-item
+                = link_to t('views.navigation.company_profile_admin'), admin_company_profile_path, class: 'nav-link'
+              li.nav-item
                 = link_to t('views.navigation.historical_records_admin'), admin_historical_records_path, class: 'nav-link'
               li.nav-item
                 = link_to t('views.navigation.construction_records_admin'), admin_construction_records_path, class: 'nav-link'
-              li.nav_item
+              li.nav-item
                 = link_to t('views.navigation.vehicles_admin'), admin_vehicles_path, class: 'nav-link'
             = link_to 'ログアウト', destroy_administrator_session_path, method: :delete, class: 'btn btn-outline-danger ml-auto'
           - else
             ul.navbar-nav.mr-auto
               li.nav-item class="#{'active' if params[:controller] == 'home'}"
                 = link_to 'ホーム', root_path, class: 'nav-link'
+              li.nav-item class="#{'active' if params[:controller] == 'company_profiles'}"
+                = link_to CompanyProfile.model_name.human, company_profile_path, class: 'nav-link'
               li.nav-item class="#{'active' if params[:controller] == 'historical_records'}"
                 = link_to HistoricalRecord.model_name.human, historical_records_path, class: 'nav-link'
               li.nav-item class="#{'active' if params[:controller] == 'construction_records'}"
                 = link_to ConstructionRecord.model_name.human, construction_records_path(year: 2016), class: 'nav-link'
               li.nav-item class="#{'active' if params[:controller] == 'vehicles'}"
                 = link_to Vehicle.model_name.human, vehicles_path, class: 'nav-link'
-            ul.navbar-nav.ml-auto
               li.nav-item
-                = link_to 'さつきが丘のホームページへ', 'http://www.rinkai-kk.com/index.html', class: 'nav-link'
+                = link_to 'さつきヶ丘分譲情報', 'http://www.rinkai-kk.com/index.html', class: 'nav-link'
     main role='main'
       = yield

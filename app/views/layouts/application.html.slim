@@ -12,7 +12,9 @@ head
 body.text-center
   header
     .container
-      = image_tag 'logo_with_text.png', class: 'img-fluid img-hero' if params[:controller] == 'home'
+      - if params[:controller] == 'home'
+        = image_tag 'logo.png', class: 'img-fluid img-hero'
+        h1.hero-header 臨海建設工業株式会社
     nav.navbar.navbar-expand-lg.navbar-light.sticky-top
       .container
         button.navbar-toggler.ml-auto type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"

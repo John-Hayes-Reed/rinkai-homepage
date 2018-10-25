@@ -13,6 +13,14 @@ class ConstructionRecord < ApplicationRecord
     v.validates :finished_on
   end
 
+  scope :started_in_year, (lambda do |year|
+    where(started_on: Date.new(year, 1, 1)..Date.new(year, 12, 31))
+  end)
+
+  scope :finished_in_year, (lambda do |year|
+    where(finished_on: Date.new(year, 1, 1)..Date.new(year, 12, 31))
+  end)
+
   def self.finished_in_year_group_for(year)
     date = Date.new(year.to_i, 7, 1)
     where(finished_on: date..date + (1.year - 1.day))

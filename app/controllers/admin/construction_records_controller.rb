@@ -12,6 +12,7 @@ module Admin
     # GET /construction_records.json
     def index
       @construction_records = ConstructionRecord.order(finished_on: :desc)
+      filter_construction_records
     end
 
     # GET /construction_records/1
@@ -74,6 +75,11 @@ module Admin
                     :category,
                     :started_on,
                     :finished_on)
+    end
+
+    def filter_construction_records
+      @construction_records = @construction_records.started_in_year(params[:started_year].to_i) if params[:started_year].present?
+      @construction_records = @construction_records.finished_in_year(params[:finished_year].to_i) if params[:finished_year].present?
     end
   end
 end

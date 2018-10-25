@@ -54,6 +54,34 @@ RSpec.describe Admin::ConstructionRecordsController, type: :controller do
       get :index, params: {}, session: valid_session
       expect(response).to be_successful
     end
+
+    it 'scopes by started year' do
+      # Arrange
+      ConstructionRecord.create! valid_attributes.merge(started_on: Date.new(2016, 4, 1))
+      ConstructionRecord.create! valid_attributes.merge(started_on: Date.new(2017, 4, 1))
+      ConstructionRecord.create! valid_attributes.merge(started_on: Date.new(2017, 4, 1))
+
+      # Act
+      get :index, params: { started_year: '2016' }, session: valid_session
+
+      # Assert
+      expect(response).to be_successful
+      expect(assigns(:construction_records).count).to eq 1
+    end
+
+    it 'scopes by finished year' do
+      # Arrange
+      ConstructionRecord.create! valid_attributes.merge(finished_on: Date.new(2016, 4, 1))
+      ConstructionRecord.create! valid_attributes.merge(finished_on: Date.new(2017, 4, 1))
+      ConstructionRecord.create! valid_attributes.merge(finished_on: Date.new(2017, 4, 1))
+
+      # Act
+      get :index, params: { finished_year: '2017' }, session: valid_session
+
+      # Assert
+      expect(response).to be_successful
+      expect(assigns(:construction_records).count).to eq 2
+    end
   end
 
   describe "GET #show" do

@@ -1,9 +1,28 @@
 == render 'pretitle'
 .container.text-left.mt-3.mb-2
-  h1
-    = ConstructionRecord.model_name.human
-    |の一覧
-  = link_to t('views.forms.new'), new_admin_construction_record_path, class: 'btn btn-outline-primary mb-2'
+  .row
+    .col-12.col-lg-6
+      h1
+        = ConstructionRecord.model_name.human
+        |の一覧
+      = link_to t('views.forms.new'), new_admin_construction_record_path, class: 'btn btn-outline-primary mb-2'
+    .col-12.col-lg-6.mt-2.mb-2
+      h6
+        = ConstructionRecord.model_name.human
+        |を絞り込む
+      = form_tag admin_construction_records_path, method: :get, class: 'form-inline' do
+        .form-group.mr-3
+          = label_tag ConstructionRecord.human_attribute_name(:started_year)
+          |&nbsp;&nbsp;
+          = select_tag :started_year, options_for_select(1985..Date.today.year, params[:started_year]&.to_i), include_blank: true, class: 'form-control form-control-sm'
+        .form-group.mr-3
+          = label_tag ConstructionRecord.human_attribute_name(:finished_year)
+          |&nbsp;&nbsp;
+          = select_tag :finished_year, options_for_select(1985..Date.today.year, params[:finished_year]&.to_i), include_blank: true, class: 'form-control form-control-sm'
+        .form-group
+          .btn-group
+            = submit_tag t('views.forms.filter'), class: 'btn btn-sm btn-outline-primary'
+            = link_to t('views.forms.clear_filter'), admin_construction_records_path, class: 'btn btn-sm btn-outline-secondary'
   table.table
     thead
       tr

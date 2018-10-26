@@ -4,6 +4,7 @@ module Admin
   # Controller for all administrative actions regarding the company's profile
   # information.
   class CompanyProfilesController < ApplicationController
+    before_action :authenticate_administrator!
     before_action :set_company_profile, only: %i[show new create edit update destroy]
 
     # GET /company_profiles/1

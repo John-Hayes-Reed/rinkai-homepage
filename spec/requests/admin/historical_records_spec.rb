@@ -6,8 +6,8 @@ RSpec.describe Admin::HistoricalRecordsController, type: :request do
   end
 
   before do
-    sign_in administrator
     create_global_information!
+    sign_in administrator
   end
 
   let!(:valid_params) { { title: 'TEST_TITLE', body: 'TEST_BODY' } }

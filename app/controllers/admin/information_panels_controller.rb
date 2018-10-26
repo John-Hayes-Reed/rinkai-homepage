@@ -3,6 +3,7 @@
 module Admin
   # Control for administrative actions for information panels.
   class InformationPanelsController < ApplicationController
+    before_action :authenticate_administrator!
     before_action :set_information_panel, only: %i[show edit update destroy]
 
     # GET /information_panels

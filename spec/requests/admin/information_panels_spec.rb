@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "Admin::InformationPanels", type: :request do
   let!(:administrator) { create_administrator! }
-  before { create_global_information! }
+  before do
+    create_global_information!
+    sign_in administrator
+  end
   let!(:valid_params) { { title: 'TEST TITLE', body: 'TEST BODY' } }
   let!(:invalid_params) { { title: nil, body: 'TEST BODY' } }
 

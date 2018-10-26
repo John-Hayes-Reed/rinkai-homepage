@@ -45,20 +45,22 @@
 
   - @information_panels.in_groups_of(2) do |panel_group|
     - first_panel = panel_group.first
-    .row.featurette
+    .row.featurette.text-left
       .col-12.col-md-7.order-md-2
         h2.featurette-heading.mb-4 = first_panel.title
-        p = simple_format(first_panel.body)
+        div.ml-1
+          = simple_format(first_panel.body)
       .col-12.col-md-5.order-md-1
         = image_tag first_panel.panel_image, class: 'rounded img-fluid mt-1' if first_panel.panel_image.attached?
 
     hr.featurette-divider
 
     - if (second_panel = panel_group.second)
-      .row.featurette
+      .row.featurette.text-left
         .col-12.col-md-7
           h2.featurette-heading.mb-4 = second_panel.title
-          p = simple_format(second_panel.body)
+          div.ml-1
+            = simple_format(second_panel.body)
         .col-12.col-md-5
           = image_tag second_panel.panel_image, class: 'rounded img-fluid mt-1' if second_panel.panel_image.attached?
 

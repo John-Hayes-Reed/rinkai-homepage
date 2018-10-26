@@ -20,7 +20,20 @@
               td = vehicle.make
               td = vehicle.serial
               td = vehicle.amount
-  .row
-    - @global_app_information.vehicle_images.each do |vehicle_image|
-      .col-12.col-lg-6
-        = image_tag vehicle_image, class: 'rounded img-fluid mt-1'
+  .d-none.d-lg-block
+    .row
+      - @global_app_information.vehicle_images.in_groups(3, false).each do |vehicle_image_group|
+        .col-lg-4.vehicle-image
+          - vehicle_image_group.each do |vehicle_image|
+            = image_tag vehicle_image, class: 'rounded img-fluid mt-2'
+  .d-none.d-lg-none.d-xl-none.d-md-block
+    .row
+      - @global_app_information.vehicle_images.in_groups(2, false).each do |vehicle_image_group|
+        .col-md-6.vehicle-image
+          - vehicle_image_group.each do |vehicle_image|
+            = image_tag vehicle_image, class: 'rounded img-fluid mt-2'
+  .d-sm-block.d-md-none.d-lg-none.d-xl-none
+    .row
+      - @global_app_information.vehicle_images.each do |vehicle_image|
+        .col-12.vehicle-image
+          = image_tag vehicle_image, class: 'rounded img-fluid mt-2'

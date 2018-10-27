@@ -6,13 +6,13 @@ RSpec.describe "Admin::InformationPanels", type: :request do
     create_global_information!
     sign_in administrator
   end
-  let!(:valid_params) { { title: 'TEST TITLE', body: 'TEST BODY' } }
+  let!(:valid_params) { { title: 'TEST TITLE', body: 'TEST BODY', position: 1 } }
   let!(:invalid_params) { { title: nil, body: 'TEST BODY' } }
 
   describe "GET /information_panels" do
     it "displays an index list" do
       # Arrange
-      2.times { InformationPanel.create! valid_params }
+      2.times { |i| InformationPanel.create! valid_params.merge(position: i) }
 
       # Act
       get admin_information_panels_path

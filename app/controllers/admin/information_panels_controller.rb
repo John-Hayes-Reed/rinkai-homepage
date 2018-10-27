@@ -73,7 +73,7 @@ module Admin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def information_panel_params
-      params.require(:information_panel).permit(:title, :body, :panel_image, :position)
+      params.require(:information_panel).permit(:title, :subtitle, :body, :panel_image, :position)
     end
   end
 end

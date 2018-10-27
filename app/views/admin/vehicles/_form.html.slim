@@ -1,10 +1,5 @@
 = form_for [:admin, @vehicle], class: 'form-inline' do |f|
-  - if @vehicle.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@vehicle.errors.count, "error")} prohibited this vehicle from being saved:"
-      ul
-        - @vehicle.errors.full_messages.each do |message|
-          li = message
+  = render partial: 'shared/messages', locals: { model: @vehicle }
   .row
     .col-sm-12.col-md-6
       .form-group

@@ -4,8 +4,8 @@ RSpec.describe "Admin::CompanyProfiles", type: :request do
   let!(:administrator) { Administrator.create! email: 'a@b.com', password: 'password' }
 
   before do
-    sign_in administrator
     create_global_information!
+    sign_in administrator
   end
 
   describe "GET /admin/company_profile" do

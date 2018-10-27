@@ -3,6 +3,7 @@
 module Admin
   # Control for administrative actions for information panels.
   class InformationPanelsController < ApplicationController
+    before_action :authenticate_administrator!
     before_action :set_information_panel, only: %i[show edit update destroy]
 
     # GET /information_panels
@@ -72,7 +73,7 @@ module Admin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def information_panel_params
-      params.require(:information_panel).permit(:title, :body, :panel_image, :position)
+      params.require(:information_panel).permit(:title, :subtitle, :body, :panel_image, :position)
     end
   end
 end

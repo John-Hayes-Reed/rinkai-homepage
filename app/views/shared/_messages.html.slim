@@ -1,0 +1,8 @@
+- if model.errors.any?
+  .alert.alert-danger
+    h4 = t('activerecord.errors.template.header', model: model.class.model_name.human, count: model.errors.count)
+    p = t('activerecord.errors.template.body')
+    hr
+    ul
+      - model.errors.full_messages.each do |message|
+        li = message

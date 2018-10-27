@@ -1,10 +1,5 @@
 = form_for [:admin, @historical_record], class: 'form-inline' do |f|
-  - if @historical_record.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@historical_record.errors.count, "error")} prohibited this vehicle from being saved:"
-      ul
-        - @historical_record.errors.full_messages.each do |message|
-          li = message
+  = render partial: 'shared/messages', locals: { model: @historical_record }
   .row
     .col-12.col-md-6
       .form-group

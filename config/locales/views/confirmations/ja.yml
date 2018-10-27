@@ -1,0 +1,4 @@
+ja:
+  views:
+    confirmations:
+      before_destroy: 本当に削除してよろしいでしょうか？削除した後には情報を回復出来ません

@@ -7,61 +7,71 @@
         = image_tag 'rinkai_image_1.JPG', class: 'img-fluid rounded'
 
 .container
-
-  .row.featurette
-    .col-lg-4.col-12
-      h1.featurette-heading
-        |運営会社情報
-      p.lead.text-muted
-        |快適な暮らしの創造へ
-    .col-lg-8.col-12.text-left.d-none.d-lg-block
-      p
-        |時代の潮流がますます厳しくなっている社会。
-        br
-        |その変貌に伴って生活ニーズの多様化、個性化は著しいものです。
-      p
-        |快適生活を支える土木、建築、開発事業。
-        br
-        |とりわけ人々の生活に密着した各部門では、多岐にわたる社会のニーズをくみあげ、それらを事業性に取り入れて、トータルシステムで多様化する社会のニーズにこたえられる様、幅広く活躍しています。
-      p
-        |また単に新しさだけに着眼するのではなく本当に優れているものを社会に創り出していきます。
-      p
-        |未来に向かってより積極的な事業展開を考え、快適で安全な社会を目指す会社として、最前線で活躍し、社会の発展の為大きく貢献してゆきたく思います。
-    .col-lg-8.col-12.text-center.d-lg-none
-      p
-        |時代の潮流がますます厳しくなっている社会。
-        br
-        |その変貌に伴って生活ニーズの多様化、個性化は著しいものです。
-      p
-        |快適生活を支える土木、建築、開発事業。
-        br
-        |とりわけ人々の生活に密着した各部門では、多岐にわたる社会のニーズをくみあげ、それらを事業性に取り入れて、トータルシステムで多様化する社会のニーズにこたえられる様、幅広く活躍しています。
-      p
-        |また単に新しさだけに着眼するのではなく本当に優れているものを社会に創り出していきます。
-      p
-        |未来に向かってより積極的な事業展開を考え、快適で安全な社会を目指す会社として、最前線で活躍し、社会の発展の為大きく貢献してゆきたく思います。
-
-  hr.featurette-divider
-
   - @information_panels.in_groups_of(2) do |panel_group|
     - first_panel = panel_group.first
-    .row.featurette.text-left
-      .col-12.col-md-7.order-md-2
-        h2.featurette-heading.mb-4 = first_panel.title
-        div.ml-1
+    - if first_panel.panel_image.attached?
+      .row.featurette.text-left
+        .col-12.col-md-7
+          h1.featurette-heading.mb-4 = first_panel.title
+          - if first_panel.subtitle.present?
+            p.lead.text-muted
+              = first_panel.subtitle
+          div.ml-1
+            = simple_format(first_panel.body)
+        .col-12.col-md-5
+          = image_tag first_panel.panel_image, class: 'rounded img-fluid mt-1'
+    - else
+      .row.featurette
+        .col-md-4.col-12.text-center.d-none.d-md-block
+          h1.featurette-heading
+            = first_panel.title
+          - if first_panel.subtitle.present?
+            p.lead.text-muted
+              = first_panel.subtitle
+
+        .col-md-4.col-12.text-left.d-md-none
+          h1.featurette-heading
+            = first_panel.title
+          - if first_panel.subtitle.present?
+            p.lead.text-muted
+              = first_panel.subtitle
+        .col-md-8.col-12.text-left.d-none.d-md-block
           = simple_format(first_panel.body)
-      .col-12.col-md-5.order-md-1
-        = image_tag first_panel.panel_image, class: 'rounded img-fluid mt-1' if first_panel.panel_image.attached?
+        .col-md-8.col-12.text-left.d-md-none
+          = simple_format(first_panel.body)
 
     hr.featurette-divider
 
     - if (second_panel = panel_group.second)
-      .row.featurette.text-left
-        .col-12.col-md-7
-          h2.featurette-heading.mb-4 = second_panel.title
-          div.ml-1
+      - if second_panel.panel_image.attached?
+        .row.featurette.text-left
+          .col-12.col-md-7.order-md-2
+            h1.featurette-heading.mb-4 = second_panel.title
+            - if second_panel.subtitle.present?
+              p.lead.text-muted
+                = second_panel.subtitle
+            div.ml-1
+              = simple_format(second_panel.body)
+          .col-12.col-md-5.order-md-1
+            = image_tag second_panel.panel_image, class: 'rounded img-fluid mt-1'
+      - else
+        .row.featurette
+          .col-md-4.col-12.text-center.d-none.d-md-block.order-md-2
+            h1.featurette-heading
+              = second_panel.title
+            - if second_panel.subtitle.present?
+              p.lead.text-muted
+                = second_panel.subtitle
+
+          .col-md-4.col-12.text-left.d-md-none.order-md-2
+            h1.featurette-heading
+              = second_panel.title
+            - if second_panel.subtitle.present?
+              p.lead.text-muted
+                = second_panel.subtitle
+          .col-md-8.col-12.text-left.d-none.d-md-block.order-md-1
             = simple_format(second_panel.body)
-        .col-12.col-md-5
-          = image_tag second_panel.panel_image, class: 'rounded img-fluid mt-1' if second_panel.panel_image.attached?
+          .col-md-8.col-12.text-left.d-md-none.order-md-1
+            = simple_format(second_panel.body)
 
       hr.featurette-divider

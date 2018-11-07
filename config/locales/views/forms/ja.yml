@@ -1,7 +1,7 @@
 ja:
   views:
     forms:
-      clear_filter: 絞り込み開錠
+      clear_filter: 絞り込み解除
       create_new: "「%{model}」を新規追加"
       destroy: 削除
       edit: 編集

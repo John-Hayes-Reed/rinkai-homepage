@@ -7,7 +7,6 @@ require 'csv'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Administrator.create email: 'root@root.com', password: 'rootroot' unless Administrator.find_by email: 'root@root.com'
 GlobalAppInformation.create! unless GlobalAppInformation.first.present?
 global_app_information = GlobalAppInformation.first!
 
